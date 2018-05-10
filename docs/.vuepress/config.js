@@ -12,8 +12,8 @@ module.exports = {
     themeConfig: {
         nav: [
             {text: '主页', link: '/'},
-            { text: '关于', link: '/about/'},
-            { text: 'love', link: '/love/index.html'}
+            {text: '关于', link: '/about/'},
+            { text: '💗', link: '/love/'},
         ],
         sidebarDepth: 0,
         sidebar: [
@@ -22,6 +22,7 @@ module.exports = {
                 collapsable: true,
                 children: [
                     '/blog/python3/',
+                    '/blog/python3/closure',
                 ]
             },
             {
@@ -60,7 +61,6 @@ module.exports = {
                     '/blog/stj/',
                 ]
             },
-            '/about/'
         ],
         // algolia: {
         //     apiKey: '<API_KEY>',

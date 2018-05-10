@@ -1,33 +1,9 @@
-# Python面试题收集整理
+# 关于
 
-[[toc]]
+此博客由[VuePress](https://vuepress.vuejs.org/)构建，由[GitHub Pages](https://pages.github.com/)托管。
 
-## 百度大牛总结十条Python面试题检验你的真实水平
+关于博主：计科大三，**Python**忠粉，开源爱好者，移动端喜欢**安卓**，开发系统喜欢**Mac**，但是也喜欢折腾Linux的各种发行版。
 
-### 1.类继承
+编程信仰：人生苦短，我用Python。
 
-问题：有如下一段代码：
-
-```python
-class A(object):
-	def show(self):
-		print('base show')
-class B(A):
-    def show(self):
-        print('derived show')
-obj = B()
-obj.show()
-```
-
-那么应该如何调用`A`的`show`方法？
-
-答案：
-
-```python
-obj.__class__ = A
-obj.show()
-```
-
-解释：`__class__`方法指向了类对象，只要给他赋值类型` A` ，然后调用方法`show `，但是用完了记得修改回来。 
-
-[文章来源](http://developer.51cto.com/art/201802/565802.htm)
+有话说？要吐槽？Email：<zzgdata@gmail.com>
