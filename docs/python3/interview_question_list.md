@@ -1,3 +1,6 @@
+---
+sidebar: auto
+---
 # Python面试题收集整理
 
 [[toc]]

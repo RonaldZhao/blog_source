@@ -10,8 +10,14 @@ module.exports = {
         ['link', {rel: 'icon', href: `/logo.png`}]
     ],
     themeConfig: {
+        lastUpdated: '最后更新于',
         nav: [
-            {text: '主页', link: '/'},
+            {text: 'Python3', link: '/python3/'},
+            {text: 'Java', link: '/java/'},
+            {text: 'Git', link: '/git/'},
+            {text: '教程/指南', link: '/guide/'},
+            {text: '开发工具', link: '/devtools/'},
+            {text: '刷题集', link: '/stj/'},
             {text: '关于', link: '/about/'},
             { text: '💗', link: '/love/'},
         ],
@@ -21,44 +27,37 @@ module.exports = {
                 title: 'Python3',
                 collapsable: true,
                 children: [
-                    '/blog/python3/',
-                    '/blog/python3/closure',
+                    '/python3/interview_question_list',
+                    '/python3/closure',
                 ]
             },
             {
                 title: 'Java',
                 collapsable: true,
                 children: [
-                    '/blog/java/fasterinputforjava',
+                    '/java/fasterinputforjava',
                 ]
             },
             {
                 title: 'Git',
                 collapsable: true,
                 children: [
-                    '/blog/git/',
+                    '/git/cheatsheet',
                 ]
             },
             {
                 title: '教程/指南',
                 collapsable: true,
                 children: [
-                    '/blog/guide/',
-                    '/blog/guide/centosinstallnginxandhttps',
+                    '/guide/fqguide',
+                    '/guide/centosinstallnginxandhttps',
                 ]
             },
             {
                 title: '开发工具',
                 collapsable: true,
                 children: [
-                    '/blog/devtools/vimfp',
-                ]
-            },
-            {
-                title: '刷题集',
-                collapsable: true,
-                children: [
-                    '/blog/stj/',
+                    '/devtools/vimfp',
                 ]
             },
         ],
