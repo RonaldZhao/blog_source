@@ -10,7 +10,6 @@ module.exports = {
         ['link', {rel: 'icon', href: `/logo.png`}]
     ],
     themeConfig: {
-        lastUpdated: '最后更新于',
         nav: [
             {text: 'Python3', link: '/python3/'},
             {text: 'Java', link: '/java/'},
@@ -21,7 +20,6 @@ module.exports = {
             {text: '关于', link: '/about/'},
             { text: '💗', link: '/love/'},
         ],
-        sidebarDepth: 0,
         sidebar: [
             {
                 title: 'Python3',
@@ -61,10 +59,6 @@ module.exports = {
                 ]
             },
         ],
-        // algolia: {
-        //     apiKey: '<API_KEY>',
-        //     indexName: '<INDEX_NAME>'
-        // }
         repo: 'RonaldZhao',
   }
 }
