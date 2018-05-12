@@ -27,6 +27,7 @@ module.exports = {
                 children: [
                     '/python3/interview_question_list',
                     '/python3/closure',
+                    '/python3/blzyy',
                 ]
             },
             {
