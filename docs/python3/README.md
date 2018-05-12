@@ -4,4 +4,8 @@
 
 [一文看懂Python闭包](closure.md)
 
+[Python变量的作用域](blzzy.md)
+
+[Python全栈之路](pythonfullstack.md)
+
 :::

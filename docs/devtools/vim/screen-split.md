@@ -6,7 +6,7 @@
 
 ## 示例
 
-![Vim分屏功能演示](./screen_split.png)
+![Vim分屏功能演示](./screen-split.png)
 
 ## 开启分屏
 

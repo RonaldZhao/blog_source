@@ -181,4 +181,4 @@ print(x)
 
 ​达到了我们想要在`inner`函数内部修改其函数外部、`outer`函数内部的变量`x`的目的。这就是`nonlocal`的用法和意义。
 
-[参考文章](https://mp.weixin.qq.com/s/KJeBsTdfins15fVXGgQHcw)
+[参考文章](https://mp.weixin.qq.com/s/OLNwWSBF0uNKqiXIhSaYRA)
