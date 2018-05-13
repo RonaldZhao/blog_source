@@ -41,6 +41,13 @@ module.exports = {
                 ]
             },
             {
+                title: '数据结构和算法',
+                collapsable: true,
+                children: [
+                    '/algorithms/',
+                ]
+            },
+            {
                 title: '教程/指南',
                 collapsable: true,
                 children: [
@@ -50,5 +57,6 @@ module.exports = {
             },
         ],
         repo: 'RonaldZhao',
+        ga: 'UA-118905862-1'
   }
 }
