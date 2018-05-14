@@ -25,7 +25,7 @@ def feast(beast, dish):
 	# 解法二：return beast.startswith(dish[0]) and beast.endswith(dish[-1])
 ```
 
-## IP验证
+## IP验证(IP Validation)
 
 ::: tip 问题描述
 
@@ -82,3 +82,132 @@ def is_valid_IP(addr):
     except socket.error:
         return False
 ```
+
+## 排序奇数(Sort the odd)
+
+::: tip 问题描述
+
+你有一个由数字组成的数组。
+
+你的任务是将其中的奇数按照升序排序，但是偶数必须仍然在它们本来的位置。
+
+零不是一个奇数所以你不需要移动它。如果你得到了一个空数组，你需要直接返回它。
+
+例如：
+
+```python
+sort_array([5, 3, 2, 8, 1, 4]) == [1, 3, 2, 8, 5, 4]
+```
+
+:::
+
+我的解法：
+
+```python
+# 快速排序，刚学会，所以没用内置的排序函数而自己写了一个
+def quick_sort(nums, left, right):
+    if left >= right:
+        return nums
+    key = nums[left]
+    low = left
+    high = right
+    
+    while left < right:
+        while left < right and nums[right] >= key:
+            right -= 1
+        nums[left] = nums[right]
+        
+        while left < right and nums[left] <= key:
+            left += 1
+        nums[right] = nums[left]
+    nums[left] = key
+    quick_sort(nums, low, left-1)
+    quick_sort(nums, left+1, high)
+    return nums
+
+def sort_array(source_array):
+    # Return a sorted array.
+    odd_nums = []
+    [odd_nums.append(x) for x in source_array if x % 2 != 0]
+    odd_nums = quick_sort(odd_nums[:], 0, len(odd_nums)-1)
+    j=0
+    for i in range(len(source_array)):
+        if source_array[i] % 2 == 0:
+            continue
+        source_array[i] = odd_nums[j]
+        j += 1
+    return source_array
+```
+
+
+
+## 简单加密＃1 - 交替分割(Simple Encryption #1 - Alternating Split)
+
+::: tip 问题描述
+
+为了构建加密的字符串：
+
+从字符串中每两个字符取一个，然后是其他的剩余字符，将他们拼接起来作为新字符串。
+
+按照上面的方法重复做`n`次。
+
+例如：
+
+```python
+"This is a test!", 1 -> "hsi  etTi sats!"
+"This is a test!", 2 -> "hsi  etTi sats!" -> "s eT ashi tist!"
+```
+
+编写两个方法：
+
+```python
+def encrypt(text, n)
+def decrypt(encrypted_text, n)
+```
+
+对于这两个方法：
+
+如果输入字符串是`None`或者空字符串则直接返回它的值。
+
+如果`n<=0`则直接返回输入的字符串。
+
+:::
+
+我的解法：
+
+```python
+def decrypt_once(encrypted_text):
+    list_of_encrypted_text = list(encrypted_text)
+    left_half = encrypted_text[:len(encrypted_text)//2]
+    right_half = encrypted_text[len(encrypted_text)//2:]
+    list_of_zip = list(zip(right_half, left_half))
+    for i in range(len(list_of_zip)):
+        list_of_zip[i] = "".join(list_of_zip[i])
+    decrypt_text = "".join(list_of_zip)
+    if len(right_half) > len(left_half):
+        decrypt_text += encrypted_text[-1]
+    return decrypt_text
+    
+def decrypt(encrypted_text, n):
+    if encrypted_text == None or encrypted_text == '' or n <= 0:
+        return encrypted_text
+    for i in range(n):
+        encrypted_text = decrypt_once(encrypted_text)
+    return encrypted_text
+
+def encrypt_once(text):
+    encrypted_text = ''
+    list_of_text = list(text)
+    for i in range(1, len(text)//2+1):
+        encrypted_text += list_of_text.pop(i)
+    encrypted_text += "".join(list_of_text)
+    return encrypted_text
+
+def encrypt(text, n):
+    if text == None or text == '' or n <= 0:
+        return text
+    for i in range(n):
+        text = encrypt_once(text)
+    return text
+```
+
