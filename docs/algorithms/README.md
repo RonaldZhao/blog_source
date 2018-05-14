@@ -19,32 +19,32 @@
 def quick_sort(nums, left, right):
     # 递归结束的条件
     if left >= right:
-        return lists
+        return nums
  
     # 选择第一个数作为基准数并记录在key中，方便最后写回
-    key = lists[left]
+    key = nums[left]
     lft = left  
     rit = right
  
     # 遍历整个当前数组
     while left < right:
         # 从右侧开始筛选大于参考点的值，直到遇到
-        while left < right and lists[right] >= key:
+        while left < right and nums[right] >= key:
             right -= 1
-        lists[left] = lists[right]  # 这个位置的值先挪到左边
+        nums[left] = nums[right]  # 这个位置的值先挪到左边
  
         # 从左边开始查找小于参考点的值
-        while left < right and lists[left] <= key:
+        while left < right and nums[left] <= key:
             left += 1
-        lists[right] = lists[left]  # 这个位置的值挪到右边
+        nums[right] = nums[left]  # 这个位置的值挪到右边
  
     # 写回改成的值
-    lists[left] = key
+    nums[left] = key
  
     # 递归，并返回结果
-    quick_sort(lists, low, left - 1)    # 递归左边部分
-    quick_sort(lists, left + 1, high)   # 递归右边部分
-    return lists
+    quick_sort(nums, low, left - 1)    # 递归左边部分
+    quick_sort(nums, left + 1, high)   # 递归右边部分
+    return nums
 
 # 测试程序
 nums = random.sample(range(1000000), 500000)  # 生成50万个100万范围内的无重复的随机数
