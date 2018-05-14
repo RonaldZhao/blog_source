@@ -48,6 +48,14 @@ module.exports = {
                 ]
             },
             {
+                title: '计算机网络',
+                collapsable: true,
+                children: [
+                    '/computer-network/',
+                    '/computer-network/chapter1',
+                ]
+            },
+            {
                 title: '教程/指南',
                 collapsable: true,
                 children: [

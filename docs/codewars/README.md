@@ -1,7 +1,5 @@
 # codewars题目的Python求解
 
-目录
-
 [[toc]]
 
 ## 百兽盛宴(The Feast of Many Beasts)
@@ -209,5 +207,184 @@ def encrypt(text, n):
     for i in range(n):
         text = encrypt_once(text)
     return text
+```
+
+## 乌龟赛跑(Tortoise racing)
+
+::: tip 问题描述
+
+名为`A`和`B`的两只乌龟必须进行一场赛跑。`A`以**每小时720英尺**的平均速度开始。年轻的`B`知道她跑的比`A`快，并且还没有吃完她的白菜。当她开始时，她看到`A`已经**领先70英尺**，但是`B`的速度是**每小时850英尺**。`B`需要多久才能追上`A`？
+
+通俗的讲：给定两个速度`v1`(`A`的速度，整数，大于零)和`v2`(`B`的速度，整数，大于零)和领先值`g`(整数，大于零)，多久`B`能追上`A`？
+
+结果是一个由小时、分钟、秒组成的所需时间数组`[hour, min, sec](向下舍入到最接近的秒)`或者是某些语言的字符串。
+
+如果`v1>=v2`那么对于`C++`、`C`、`Go`、`Nim`分别返回`nil`、`nothing`、`null`、`None`，对于`Kotlin`返回`[]`或`-1 -1 -1`。
+
+示例：
+
+(结果的形式取决于所用的语言)
+
+```
+race(720, 850, 70) => [0, 32, 18] or "0 32 18"
+race(80, 91, 37)   => [3, 21, 49] or "3 21 49"
+```
+
+:::
+
+我的解法：
+
+```python
+def race(v1, v2, g):
+    if v1 >= v2:
+    	return None
+    s = g/(v2-v1)*3600
+    hour = int(s//3600)
+    s = s-hour*3600
+    min = int(s//60)
+    sec = int(s-min*60)
+    return [hour, min, sec]
+```
+
+## 找众数(Find the majority)
+
+::: tip 题目描述
+
+目标：
+
+给定一个元素列表`[a1, a2, ... , an]`，每一个元素都是一个字符串，编写一个函数`majority`，返回列表中出现次数最多的元素的值。
+
+如果没有赢家，函数应该基于语言返回`None`、`NULL`、`nil`等。
+
+示例：
+
+`majority(["A", "B", "A"])`返回`"A"`，`majority(["A", "B", "B", "A"])`返回`None`。
+
+:::
+
+我的解法：
+
+```python
+def majority(arr):
+  if arr == []:
+      return None
+  set_of_arr = set(arr)
+  d = dict()
+  maxes = []
+  for item in set_of_arr:
+      d[arr.count(item)] = item
+      maxes.append(arr.count(item))
+  if maxes.count(max(maxes)) > 1:
+      return None
+  return d[max(maxes)]
+```
+
+## i的幂(Power of i)
+
+::: tip 题目描述
+
+`i`是虚数单位，它由`i²= -1`定义，因此它是`x²+ 1 = 0`的解。
+
+你的任务：
+
+就是写一个函数`pofi`，它以一个字符串（答案可能包含`i`）的形式返回给定的非负整数的最简单形式的幂。
+
+即：给定一个非负整数`n`，返回`i^n`。`i`是虚数单位。
+
+:::
+
+我的解法：
+
+```python
+def pofi(n):
+    result = ['1', 'i', '-1', '-i']
+    return result[n%4]
+```
+
+简化一下：
+
+```python
+def pofi(n):
+    return ['1', 'i', '-1', '-i'][n%4]
+```
+
+## (Minimize Sum Of Array (Array Series #1))
+
+::: tip 题目描述
+
+任务：
+
+给定一个整数数组，求出从每个两个整数乘积求和得到的最小和。
+
+注意：
+
+- 数组只包含正数
+- 数组元素个数一定为偶数
+
+输入输出示例：
+
+```
+1- minSum({5,4,2,3}) ==> return (22)
+```
+
+解释：
+
+对两个整数乘积求和得到的最小和：`5 * 2 + 3 * 4 = 22`
+
+```
+2- minSum({12,6,10,26,3,24}) ==> return (342)
+```
+
+解释：
+
+将两个整数的积相加得到的最小和：`26 * 3 + 24 * 6 + 12 * 10 = 342`
+
+```
+3- minSum({9,2,8,7,5,4,0,6}) ==> return (74)
+```
+
+解释：
+
+对两个整数乘积求和得到的最小和：`9 * 0 + 8 * 2 + 7 * 4 + 6 * 5 = 74`
+
+```python
+minSum({5,4,2,3}) // return 22 
+"""
+Explanation :: 
+5*2 +3*4 = 22
+"""
+
+minSum({12,6,10,26,3,24}) // return 342
+"""
+Explanation ::
+26*3 + 24*6 + 12*10 = 342
+"""
+
+minSum({9,2,8,7,5,4,0,6}) // return 74
+"""
+Explanation ::
+9*0 + 8*2 +7*4 +6*5 = 74
+"""
+```
+
+:::
+
+我的解法：
+
+```python
+def min_sum(arr):
+    arr.sort()
+    sum = 0
+    for i in range(len(arr)//2):
+        sum += (arr[i] * arr[-(i+1)])
+    return sum
+```
+
+简化一下：
+
+```python
+def min_sum(arr):
+    arr.sort()
+    return sum([arr[i] * arr[-i-1] for i in range(len(arr)//2)])
 ```
 
