@@ -14,7 +14,9 @@
 
 :::
 
-我的解法：
+<details>
+
+<summary>我的解法(点击展开)</summary>
 
 ```python
 def feast(beast, dish):
@@ -22,6 +24,8 @@ def feast(beast, dish):
     return beast[0] == dish[0] and beast[-1] == dish[-1]
 	# 解法二：return beast.startswith(dish[0]) and beast.endswith(dish[-1])
 ```
+
+</details>
 
 ## IP验证(IP Validation)
 
@@ -308,7 +312,7 @@ def pofi(n):
     return ['1', 'i', '-1', '-i'][n%4]
 ```
 
-## (Minimize Sum Of Array (Array Series #1))
+## 数组的最小和(Minimize Sum Of Array (Array Series #1))
 
 ::: tip 题目描述
 
@@ -388,3 +392,237 @@ def min_sum(arr):
     return sum([arr[i] * arr[-i-1] for i in range(len(arr)//2)])
 ```
 
+## X和O(Exes and Ohs)
+
+::: tip 题目描述
+
+检查一下字符串中是否有相同数量的`x`s和`o`，忽略大小写。该方法必须返回一个布尔值。字符串可以包含任何字符。
+
+示例：
+
+```
+XO("ooxx") => true
+XO("xooxx") => false
+XO("ooxXm") => true
+XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+XO("zzoo") => false
+```
+
+:::
+
+我的解法：
+
+```python
+def xo(s):
+    return s.lower().count('x') == s.lower().count('o')
+```
+
+## 等值线(Isograms)
+
+::: tip 题目描述
+
+等值线是一个没有重复字母，连续或不连续的字/词。实现一个函数，该函数确定仅包含字母的字符串是否是一个等值线。假设空字符串是一个等值线。忽略大小写。
+
+示例：
+
+```
+is_isogram("Dermatoglyphics" ) == true
+is_isogram("aba" ) == false
+is_isogram("moOse" ) == false # -- ignore letter case
+```
+
+:::
+
+我的解法：
+
+```python
+def is_isogram(string):
+    if string == '':
+        return True
+    return len(string) == len(set(string.lower()))
+```
+
+## 喃喃(Mumbling)
+
+::: tip 题目描述
+
+这一次没有故事，没有理论。下面的例子向你展示了如何编写一个函数`accum`。
+
+示例：
+
+```
+accum("abcd")    # "A-Bb-Ccc-Dddd"
+accum("RqaEzty") # "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+accum("cwAt")    # "C-Ww-Aaa-Tttt"
+```
+
+:::
+
+我的解法：
+
+```python
+def accum(s):
+    list_of_s = list(s)
+    for i in range(len(s)):
+        list_of_s[i] = (list_of_s[i]*(i+1)).title()
+    return '-'.join(list_of_s)
+```
+
+## 正数的和(Sum of positive)
+
+::: tip 题目描述
+
+你得到一组数字，返回所有正数的总和。
+
+示例：
+
+```
+[1,-4,7,12] => 1 + 7 + 12 = 20
+```
+
+:::
+
+我的解法：
+
+```python
+def is_positive(n):
+    return n > 0
+
+def positive_sum(arr):
+    arr = filter(is_positive, arr)
+    if len(arr) == 0:
+        return 0
+    return sum(arr)
+```
+
+## 二合一(Two to One)
+
+::: tip 题目描述
+
+取两个字符串`s1`和`s2`，仅包含来自`a`到`z`的字母。返回一个新的排好序的，尽可能长的，包含不同的字母的字符串。
+
+- 每个字符仅取一次——无论来自`s2`还是`s2`，示例：
+
+```
+a = "xyaabbbccccdefww" b = "xxxxyyyyabklmopq" longest(a, b) -> "abcdefklmopqwxy"
+a = "abcdefghijklmnopqrstuvwxyz" longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+```
+
+:::
+
+我的解法：
+
+```python
+def longest(s1, s2):
+    s = list(set(s1 + s2))
+    s.sort()  # 返回值是None，不是list
+    return ''.join(s)
+```
+
+简化版：
+
+```python
+def longest(s1, s2):
+    return ''.join(sorted(set(s1 + s2)))  # sorted返回的是一个按升序排列的list
+```
+
+## 排序的？是？否？如何排序的？(Sorted? yes? no? how?)
+
+::: tip 题目描述
+
+完成接受整数数组的方法，并返回以下内容之一：
+
+- `"yes, ascending"` - 如果数组中的数字按升序排序
+- `"yes, descending"` - 如果数组中的数字按降序排序
+- `"no"` - 其他情况
+
+你可以假设这个数组总是合法的，并且总会有一个正确的答案。
+
+:::
+
+我的解法：
+
+```python
+def is_sorted_and_how(arr):
+    if arr == sorted(arr):
+        return 'yes, ascending'
+    elif arr == sorted(arr, reverse=True):
+        return 'yes, descending'
+    return 'no'
+```
+
+## 所有3或5的倍数之和(Sum of all the multiples of 3 or 5)
+
+::: tip 题目描述
+
+你的任务是写一个函数`findSum `。
+
+上至并包含`n`，这个函数将会返回所有3或5的倍数的和。
+
+示例：
+
+`findSum(5)` should return 8 (3 + 5) 
+
+`findSum(10)` should return 33 (3 + 5 + 6 + 9 + 10) 
+
+:::
+
+我的解法：
+
+```python
+def is_multiples_of_3_or_5(x):
+    return x % 3 == 0 or x % 5 == 0
+
+def find(n):
+    return sum(filter(is_multiples_of_3_or_5, range(1, n + 1)))
+```
+
+## 损坏的序列(Broken sequence)
+
+::: tip 题目描述
+
+您会收到一些以空格分隔的由随机元素组成的字符串。检查元素是否是从1开始的递增整数序列的一部分，增量为1（例如1，2，3，4）。
+
+返回：
+
+- `0`：如果元素可以形成这样的序列，并且没有数字缺失（“未被破坏”），例如`“1 2 4 3”`。
+- `1`：如果输入中有任何非数字元素（“无效”），例如`“1 2 a”`。
+- `n`：如果元素是这种序列的一部分，但是有些数字缺失，并且`n`是最小的（“损坏了”），例如`“1 2 4”`或`“1 5”`。
+
+示例：
+
+```
+"1 2 3 4"  ==>  返回 0, 因为序列完整
+
+"1 2 4 3"  ==>  返回 0, 因为序列完整 (顺序无所谓)
+
+"2 1 3 a"  ==>  返回 1, 因为包含一个非数字字符
+
+"1 3 2 5"  ==>  返回 4, 因为4是序列所缺失的
+
+"1 5"      ==>  返回 2, 因为序列缺少的是 2, 3, 4 而且 2 是其中最小的
+```
+
+:::
+
+<details>
+
+<summary>我的解法(点击展开)</summary>
+
+```python
+def find_missing_number(sequence):
+    if sequence == '':
+        return 0
+    elif not sequence.replace(' ', '').isdigit() or 1 not in list(map(int, sequence.split(' '))):
+        return 1
+    else:
+        set_of_sequence = set(map(int, sequence.split(' ')))
+        set_range = set(range(1, len(set_of_sequence)+1))
+        sub_set = set_range - set_of_sequence
+        if len(sub_set) == 0:
+            return 0
+        else:
+            return min(sub_set)
+```
+
+</details>

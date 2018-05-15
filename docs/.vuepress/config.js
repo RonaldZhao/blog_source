@@ -29,6 +29,7 @@ module.exports = {
                 children: [
                     '/python3/interview_question_list',
                     '/python3/closure',
+                    '/python3/multiple-inheritance-mixin',
                     '/python3/blzyy',
                     '/python3/pythonfullstack',
                 ]
