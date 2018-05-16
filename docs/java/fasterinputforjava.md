@@ -1,7 +1,5 @@
 # Faster Input for Java
 
-目录
-
 [[toc]]
 
 ## 准备工作
