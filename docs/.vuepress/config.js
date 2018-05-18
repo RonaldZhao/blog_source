@@ -32,6 +32,7 @@ module.exports = {
                     '/python3/multiple-inheritance-mixin',
                     '/python3/blzyy',
                     '/python3/pythonfullstack',
+                    '/python3/onlinechatsys',
                 ]
             },
             {
