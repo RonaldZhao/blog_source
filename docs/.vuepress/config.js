@@ -51,6 +51,13 @@ module.exports = {
                 ]
             },
             {
+                title: 'MySQL',
+                collapsable: true,
+                children: [
+                    '/mysql/',
+                ]
+            },
+            {
                 title: '计算机网络',
                 collapsable: true,
                 children: [
@@ -68,6 +75,5 @@ module.exports = {
             },
         ],
         repo: 'RonaldZhao',
-        ga: 'UA-118905862-1'
   }
 }
