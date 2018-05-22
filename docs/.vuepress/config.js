@@ -17,6 +17,7 @@ module.exports = {
                 items: [
                     {text: 'Git', link: '/devtools/git/'},
                     {text: 'Vim', link: '/devtools/vim/'},
+                    {text: 'VS Code', link: '/devtools/vscode/'},
                 ]
             },
             {text: '关于', link: '/about/'},
