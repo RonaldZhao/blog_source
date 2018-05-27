@@ -18,6 +18,7 @@ module.exports = {
                     {text: 'Git', link: '/devtools/git/'},
                     {text: 'Vim', link: '/devtools/vim/'},
                     {text: 'VS Code', link: '/devtools/vscode/'},
+                    {text: 'Pipenv', link: '/devtools/pipenv/'},
                 ]
             },
             {text: '关于', link: '/about/'},
@@ -34,6 +35,20 @@ module.exports = {
                     '/python3/blzyy',
                     '/python3/pythonfullstack',
                     '/python3/onlinechatsys',
+                ]
+            },
+            {
+                title: 'PyQt 5',
+                collapsable: true,
+                children: [
+                    '/pyqt5/',
+                ]
+            },
+            {
+                title: '设计模式',
+                collapsable: true,
+                children: [
+                    '/design_pattern/',
                 ]
             },
             {
