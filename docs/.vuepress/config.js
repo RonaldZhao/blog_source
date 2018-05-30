@@ -90,5 +90,9 @@ module.exports = {
             },
         ],
         repo: 'RonaldZhao',
+        lastUpdated: '最后更新于',
+  },
+  markdown: {
+      lineNumbers: true,
   }
 }
