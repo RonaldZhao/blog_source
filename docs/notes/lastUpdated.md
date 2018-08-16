@@ -2,7 +2,7 @@
 
 ## 我的目录结构：
 
-   ![博客目录结构](/imgs/filetree.png)
+   ![博客目录结构](/imgs/file-tree.png)
 
 ## 使`lastUpdated`参数生效的正确操作步骤：
 
