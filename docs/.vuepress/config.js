@@ -49,6 +49,7 @@ module.exports = {
         */
         nav: [
             {text: 'Python3', link: '/python3/'},
+            {text: 'Notes', link: '/notes/'},
             {text: 'About', link: '/about/'},
             {text: '💗', link: '/love/'},
         ]
