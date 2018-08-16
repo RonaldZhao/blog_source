@@ -34,7 +34,7 @@ module.exports = {
         */
         repo: 'https://github.com/RonaldZhao/RonaldZhao.github.io',
         // 默认是 false, 设置为 true 来启用
-        editLinks: true,
+        editLinks: false,
         // 默认为 "Edit this page"
         editLinkText: '帮助我改善此页面！',
         // 最后更新时间
