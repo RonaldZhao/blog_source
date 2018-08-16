@@ -16,29 +16,29 @@
 
 首先到[Vultr官网](https://www.vultr.com/)注册一个账号，然后充值10刀(虽然说每个月5刀，但是人家允许最少充10刀)： 
 
-![预缴费](./recharge.png)
+![预缴费](/imgs/recharge.png)
 
 然后部署一台主机： 
 
-![添加Server](./deploy.png)
+![添加Server](/imgs/deploy.png)
 
-![节点选择](./location.png)
+![节点选择](/imgs/location.png)
 
-![服务器类型选择](./servertype.png)
+![服务器类型选择](/imgs/servertype.png)
 
-![服务器规格选择](./serversize.png)
+![服务器规格选择](/imgs/serversize.png)
 
-![附加选项](./additionalfeature.png)
+![附加选项](/imgs/additionalfeature.png)
 
-![主机名设置](./hostname.png)
+![主机名设置](/imgs/hostname.png)
 
-![服务器概览界面](./serverip.png)
+![服务器概览界面](/imgs/serverip.png)
 
 如果你用的是**Windows**，可以使用**puty**登录。[点我去下载](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)，打开puty后只要设置好你的**IP**、用户名**root**和**端口号22**(ssh端口号为22)登录然后输入密码即可。
 
 登录成功显示如下： 
 
-![SSH登录成功](./login.png)
+![SSH登录成功](/imgs/login.png)
 
 ## 服务器端配置
 
@@ -52,7 +52,7 @@
 
    安装过程中会依次让你输入**密码**(可默认，但不建议)、**登录用的端口号**(可默认，范围1-65535)、**选择加密方式**(建议选择aes-256-cfb)，如果还有其他需要选择的都直接回车默认即可。 
 
-   ![安装所需选择/输入的信息](./installdone.png)
+   ![安装所需选择/输入的信息](/imgs/installdone.png)
 
 2. 配置 shadowsocks.json 文件
 
@@ -151,13 +151,13 @@
 
 - 如果你用的是**Windows**，到这里[下载Shadowsocks](https://github.com/shadowsocks/shadowsocks-windows/releases)，解压后(不用安装)分别设置地址、端口号、加密方式和密码然后确定，最后启动系统代理即可：
 
-  ![Windows客户端配置](./windows.png)
+  ![Windows客户端配置](/imgs/windows.png)
 
 - 如果你用的是**Linux/Mac**，到这里[下载Shadowsocks](https://github.com/shadowsocks/ShadowsocksX-NG/releases)，解压后打开配置如下：
 
   打开Shadowsocks后依次点击**服务器**➡️**打开服务器设定…**，然后分别设置地址、端口号、加密方式和密码然后确定即可： 
 
-  ![Linux/Mac客户端配置 ](./linuxmac.png)
+  ![Linux/Mac客户端配置 ](/imgs/linuxmac.png)
 
 ## 验证
 

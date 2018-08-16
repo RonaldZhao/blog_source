@@ -1,8 +1,8 @@
 # Vuepress中的lastUpdated参数的正确使用
 
 ## 我的目录结构：
-   
-   ![博客目录结构](./filetree.png)
+
+   ![博客目录结构](/imgs/filetree.png)
 
 ## 使`lastUpdated`参数生效的正确操作步骤：
 

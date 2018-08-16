@@ -16,4 +16,4 @@
 
 ## Visual Studio Code
 
-### [Visual Studio Code 配置(不定期更新)](./vscode/vscode-config.md
+### [Visual Studio Code 配置(不定期更新)](./vscode/vscode-config.md)
