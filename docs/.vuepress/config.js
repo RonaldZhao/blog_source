@@ -1,98 +1,56 @@
 module.exports = {
     locales: {
         '/': {
+            base: '/',
             lang: 'zh-CN',
-            title: 'RonaldZhao的博客',
-            description: 'Stay hungary.Stay foolish. —— Steve Jobs'
+            title: 'Ronald Zhao \'s Blog',
+            description: 'Stay hungary.Stay foolish. —— Steve Jobs',
+            // 编辑链接文字
+            editLinkText: '在 GitHub 上编辑此页',
+            // Service Worker 的配置
+            /*
+            serviceWorker: {
+                updatePopup: {
+                    message: "发现新内容可用.",
+                    buttonText: "刷新"
+                }
+            },
+            */
         }
     },
     head: [
-        ['link', {rel: 'icon', href: `/logo.png`}]
+        ['link', {rel: 'icon', href: '/logo.png'}]  // 设置博客的logo
     ],
+    markdown: {
+        lineNumbers: true
+    },
     themeConfig: {
-        nav: [
-            {text: 'codewars', link: '/codewars/'},
-            {
-                text: '开发工具的使用',
-                items: [
-                    {text: 'Git', link: '/devtools/git/'},
-                    {text: 'Vim', link: '/devtools/vim/'},
-                    {text: 'VS Code', link: '/devtools/vscode/'},
-                    {text: 'Pipenv', link: '/devtools/pipenv/'},
-                ]
-            },
-            {text: '关于', link: '/about/'},
-            {text: '💗', link: '/love/'},
-        ],
+        sidebar: 'auto',
+        /*
         sidebar: [
-            {
-                title: 'Python3',
-                collapsable: true,
-                children: [
-                    '/python3/interview_question_list',
-                    '/python3/closure',
-                    '/python3/multiple-inheritance-mixin',
-                    '/python3/blzyy',
-                    '/python3/pythonfullstack',
-                    '/python3/onlinechatsys',
-                ]
-            },
-            {
-                title: 'PyQt 5',
-                collapsable: true,
-                children: [
-                    '/pyqt5/',
-                ]
-            },
-            {
-                title: '设计模式',
-                collapsable: true,
-                children: [
-                    '/design_pattern/',
-                ]
-            },
-            {
-                title: 'Java',
-                collapsable: true,
-                children: [
-                    '/java/fasterinputforjava',
-                ]
-            },
-            {
-                title: '数据结构和算法',
-                collapsable: true,
-                children: [
-                    '/algorithms/',
-                ]
-            },
-            {
-                title: 'MySQL',
-                collapsable: true,
-                children: [
-                    '/mysql/',
-                ]
-            },
-            {
-                title: '计算机网络',
-                collapsable: true,
-                children: [
-                    '/computer-network/',
-                    '/computer-network/chapter1',
-                ]
-            },
-            {
-                title: '教程/指南',
-                collapsable: true,
-                children: [
-                    '/guide/fqguide',
-                    '/guide/centosinstallnginxandhttps',
-                ]
-            },
+            '/',
+            '/about/',
         ],
-        repo: 'RonaldZhao',
-        lastUpdated: '最后更新于',
-  },
-  markdown: {
-      lineNumbers: true,
-  }
+        */
+        repo: 'https://github.com/RonaldZhao/RonaldZhao.github.io',
+        // 默认是 false, 设置为 true 来启用
+        editLinks: true,
+        // 默认为 "Edit this page"
+        editLinkText: '帮助我改善此页面！',
+        // 最后更新时间
+        lastUpdated: true,
+        // search: false,
+        // searchMaxSuggestions: 10,
+        /*
+        algolia: {
+            apiKey: '',
+            indexName: ''
+        },
+        */
+        nav: [
+            {text: 'Python3', link: '/python3/'},
+            {text: 'About', link: '/about/'},
+            {text: '💗', link: '/love/'},
+        ]
+    },
 }

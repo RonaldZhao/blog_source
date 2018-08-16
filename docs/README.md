@@ -1,7 +1,7 @@
 ---
 home: true
-heroImage: /logo.png
-actionText: 开始浏览 ▶
+heroImage: ./logo.png
+actionText: 进入博客
 actionLink: /about/
 features:
 - title: 简洁至上
@@ -12,6 +12,6 @@ features:
   details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
 footer: MIT Licensed | Copyright © 2018-今 Ronald Zhao
 ---
-::: warning 说明
+::: tip logo版权说明
 Picture above and this blog's Logo are made by [Freepik](http://www.freepik.com/) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/) 
 :::
