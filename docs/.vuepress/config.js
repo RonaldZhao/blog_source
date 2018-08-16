@@ -49,7 +49,13 @@ module.exports = {
         */
         nav: [
             {text: 'Python3', link: '/python3/'},
+            {text: 'MySQL', link: '/mysql/'},
+            {text: 'Redis', link: '/redis/'},
+            {text: 'Algorithm', link: '/algorithms/'},
+            {text: 'Codewars', link: '/codewars/'},
+            {text: 'Guide', link: '/guide/'},
             {text: 'Notes', link: '/notes/'},
+            {text: 'Tools', link: '/devtools/'},
             {text: 'About', link: '/about/'},
             {text: '💗', link: '/love/'},
         ]
