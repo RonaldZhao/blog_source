@@ -7,7 +7,7 @@ features:
 - title: 简洁至上
   details: Life is short, i use python.
 - title: 技术栈(养成中)
-  details: Python、Flask、Django、BootStrap、Matplotlib、Numpy、MySQL、Redis、Javascript...
+  details: Python、Flask、Django、BootStrap、Vue、Matplotlib、Numpy、MySQL、Redis、Javascript、Docker...
 - title: 目标职位
   details: 全栈(全干)攻城狮
 footer: MIT Licensed | Copyright © 2018-今 Ronald Zhao
