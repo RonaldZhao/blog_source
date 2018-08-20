@@ -1,6 +1,12 @@
 # 文章索引
 
-[[toc]]
+## Atom
+
+### [(译) Atom 飞行手册](./atom/)
+
+## PowerShell
+
+### [Windows PowerShell 无法激活 python 虚拟环境问题的解决](./powershell/)
 
 ## Git
 
