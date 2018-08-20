@@ -1,5 +1,7 @@
 # 文章索引
 
+## [Python面试题](./interview.md)
+
 ## [不可不知的Python陷阱](./traps.md)
 
 ## [Python面试题收集整理](./interview_question_list.md)
