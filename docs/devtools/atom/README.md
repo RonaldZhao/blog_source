@@ -50,7 +50,118 @@ web浏览器非常适合浏览网页，但是编写代码是一项需要专用�
 
 ### 安装 Atom
 
+为了开始使用`Atom`，您需要将`Atom`安装在您的系统上。本节将介绍如何在您的系统上安装`Atom`以及如何从源码构建它的基础知识。
+
+安装`Atom`应该是相当简单的。通常，您可以访问[https://atom.io/](https://atom.io/)然后在页面顶部看到如下所示的下载按钮：
+
+![download-atom](/imgs/mac-downloads.jpg)
+
+哪一个或几个按钮应该是对应于您的平台的，并且下载包是易于安装的。但是，我们还是在这里稍微详细的介绍一下细节吧。
+
+#### 在 Mac 上安装
+
+`Atom`遵循标准的 Mac zip 安装过程。您可以点击[https://atom.io](https://atom.io/)网站上的下载按钮，也可以转到`Atom`的版本页面下载明确的`atom-mac.zip`文件。一旦您获取到该文件，您可以单击该文件以解压应用程序，然后将新的`Atom`应用程序拖到您的"应用程序"文件夹中。
+
+当您第一次打开`Atom`时，它将尝试安装`atom`和`apm`命令以在终端中使用。 在某些情况下，`Atom`可能无法安装这些命令，因为它需要管理员密码。  例如，要检查`Atom`是否能够安装`atom`命令，请打开终端窗口并输入`which atom`。 如果已安装`atom`命令，您将看到如下内容：
+
+```bash
+$ which atom
+/usr/local/bin/atom
+$
+```
+
+如果未安装`atom`命令，则`which`命令不会返回任何内容：
+
+```bash
+$ which atom
+$
+```
+
+要安装`atom`和`apm`命令，请从[命令选项板](https://flight-manual.atom.io/getting-started/sections/atom-basics#command-palette)运行`"Window: Install Shell Commands"，这将提示您输入管理员密码。
+
+##### Portable Mode
+
+##### Building Atom from Source
+
+##### Proxy and Firewall Settings
+
+#### 在 Windows 上安装
+
+#### 在 Linux 上安装
+
 ### Atom 基础
+
+既然已经在你的系统上安装了Atom，我们就可以启动它，配置它并熟悉这个编辑器。
+
+当您第一次启动`Atom`时，您应该看到如下所示的界面：
+
+![atom-first-lunch](https://flight-manual.atom.io/getting-started/images/first-launch.png)
+
+这是`Atom`的欢迎界面，为您提供了如何开始使用编辑器的良好起点。
+
+#### 术语
+
+您可以在我们的[术语表](https://flight-manual.atom.io/resources/sections/glossary/)中找到我们在整本手册中使用的所有各种术语的定义。
+
+#### 命令面板
+
+在那个欢迎界面中，我们介绍到的可能是Atom中最重要的命令：命令选项版。当焦点在编辑窗口时如果您按下`Cmd+Shift+P`(Win/Linux则是`Ctrl+Shift+P`)，命令选项版就会弹出。
+
+这个搜索驱动的菜单可以执行Atom中可能执行的任何主要任务。您可以按`Cmd/Control + Shift + P`并搜索命令，而不是单击所有应用程序菜单以查找内容。
+
+![command-palette](https://flight-manual.atom.io/getting-started/images/command-palette.png)
+
+您不仅可以查看并快速搜索数千种可能的命令，还可以查看是否存在与之关联的快捷键绑定。这很棒，因为这意味着你可以以你的方式猜测着做有趣的事情，同时也学习与之相关的快捷键。
+
+对于本书的其余部分，除了针对不同命令的快捷键绑定之外，我们将尝试阐述清楚您可以在命令选项板中搜索的文本。
+
+#### 设置和首选项
+
+Atom有许多设置和首选项，您可以在"设置视图"(Settings View)中进行修改。
+
+![settings](https://flight-manual.atom.io/getting-started/images/settings.png)
+
+这包括更改主题，指定如何处理换行，字体设置，选项卡大小，滚动速度等等。 您还可以使用此屏幕安装新的包和主题，我们将在[Atom包](https://flight-manual.atom.io/using-atom/sections/atom-packages)中介绍。
+
+您可以通过以下三种方式打开"设置视图"(Settings View)：
+
+- 单击菜单栏中的`Atom > Preferences (Mac)`/`File > Settings(Windows)`/`Edit > Preferences (Linux)`菜单项
+- 在命令选项板中搜索：`settings-view:open`
+- 使用`Cmd+,`/`Ctrl+,`快捷键
+
+#### 更换主题
+
+“设置视图”还允许您更改Atom的主题。 Atom默认提供4种不同的UI主题，Atom和One主题的暗色和浅色变体，以及8种不同的语法主题。 您可以通过单击“设置视图”侧栏中的“主题”选项卡来修改活动主题或安装新主题。
+
+![theme](https://flight-manual.atom.io/getting-started/images/theme.png)
+
+UI主题控制着如标签页和树状视图等这些UI元素的样式，同时语法主题控制着加载到编辑器的文本的语法高亮。要更改语法或UI主题，只需要在相应的下拉列表中选择不同的主题即可。
+
+如果你想要一些不同的主题，在[https://atom.io](https://atom.io/)上还有几十个供你选择。我们将涵盖在[样式调整(Style Tweaks)]()中自定义主题和在[创建主题(Creating a Theme)]()中创建你自己的主题。
+
+#### Soft Wrap
+
+您可以在"设置视图(Settings View)"中指定空白和wrapping的首选项。
+
+![settings-wrap](https://flight-manual.atom.io/getting-started/images/settings-wrap.png)
+
+启用"Soft Tabs"的话当您按`Tab`时将插入空格而不是实际制表符，并且"Tab Length"设置指定当您执行此操作的时候要插入的空格数，或者如果"Soft Tabs"禁用使用多少个空格表示制表符。
+
+"Soft Wrap"选项会将对于当前窗口太长而无法完全展示的行进行自动换行。如果此选项被禁用，则你必须滑动窗口来查看那些超过屏幕宽度的行的剩余部分内容.如果切换"Soft Wrap At Preferred Line Length"选项,则行将以80个字符而不是界面的末尾换行.您还可以在此界面上将默认行长度更改为80以外的值.
+
+在[基础定制](#基础定制)中, 我们将看到如何为不同类型的文件设置不同的wrap首选项(例如, 如果你只想让Markdown文件自动换行而不包括其他文件).
+
+#### 打开, 修改和保存文件
+
+既然您的编辑器已经按照您的意愿运行了, 那我们就开始打开并编辑文件吧. 毕竟这是一个文本编辑器, 对吧?
+
+##### 打开文件
+
+##### 编辑和保存文件
+
+#### 打开的目录
+
+##### 在一个项目中打开文件
 
 ### 小结
 
