@@ -3,8 +3,8 @@ module.exports = {
         '/': {
             base: '/',
             lang: 'zh-CN',
-            title: 'Ronald Zhao \'s Blog',
-            description: 'Stay hungary.Stay foolish. —— Steve Jobs',
+            title: 'Ronald Zhao\'s Blog',
+            description: 'Stay hungary. Stay foolish. —— Steve Jobs',
             // 编辑链接文字
             editLinkText: '在 GitHub 上编辑此页',
             // Service Worker 的配置
@@ -49,10 +49,22 @@ module.exports = {
         */
         nav: [
             {text: 'Python3', link: '/python3/'},
-            {text: 'MySQL', link: '/mysql/'},
-            {text: 'Redis', link: '/redis/'},
+            {
+              text: '刷题',
+              items: [
+                {text: 'LintCode', link: '/lintcode/'},
+                {text: 'CodeWars', link: '/codewars/'},
+                // {text: 'LeetCode', link: '/leetcode/'},
+              ]
+            },
+            {
+              text: '数据库',
+              items: [
+                {text: 'MySQL', link: '/mysql/'},
+                {text: 'Redis', link: '/redis/'},
+              ]
+            },
             {text: 'Algorithm', link: '/algorithms/'},
-            {text: 'Codewars', link: '/codewars/'},
             {text: 'Guide', link: '/guide/'},
             {text: 'Notes', link: '/notes/'},
             {text: 'Tools', link: '/devtools/'},
