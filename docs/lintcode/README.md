@@ -94,6 +94,53 @@ public ListNode removeElements(ListNode head, int val) {
 }
 ```
 
+### 454. 矩阵面积
+
+```python
+class Rectangle:
+
+    '''
+     * Define a constructor which expects two parameters width and height here.
+    '''
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    '''
+     * Define a public method `getArea` which can calculate the area of the
+     * rectangle and return.
+    '''
+    def getArea(self):
+        return self.width * self.height
+
+```
+
+```java
+public class Rectangle {
+    /*
+     * Define two public attributes width and height of type int.
+     */
+     public int width;
+     public int height;
+
+    /*
+     * Define a constructor which expects two parameters width and height here.
+     */
+     Rectangle(int width, int height) {
+         this.width = width;
+         this.height = height;
+     }
+
+    /*
+     * Define a public method `getArea` which can calculate the area of the
+     * rectangle and return.
+     */
+     public int getArea() {
+         return this.width * this.height;
+     }
+}
+```
+
 ## 简单级
 
 ## 中等级
