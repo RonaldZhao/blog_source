@@ -36,7 +36,7 @@ def trailingZeros(self, n):
 ```
 
 ```java
-// java
+// Java
 public long trailingZeros(long n) {
     long s = 0;  // int范围不够
     while(n != 0) {
@@ -70,7 +70,7 @@ def removeElements(self, head, val):
 ```
 
 ```java
-// Java 解
+// Java
 public ListNode removeElements(ListNode head, int val) {
     if(head != null) {
         ListNode cur = head;
@@ -97,6 +97,7 @@ public ListNode removeElements(ListNode head, int val) {
 ### 454. 矩阵面积
 
 ```python
+# python3
 class Rectangle:
 
     '''
@@ -116,6 +117,7 @@ class Rectangle:
 ```
 
 ```java
+// Java
 public class Rectangle {
     /*
      * Define two public attributes width and height of type int.

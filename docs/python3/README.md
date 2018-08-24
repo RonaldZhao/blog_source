@@ -1,5 +1,7 @@
 # 文章索引
 
+## [yield from](./yieldfrom.md)
+
 ## [yield和generator](./yield-generator.md)
 
 ## [Python面试题](./interview.md)
