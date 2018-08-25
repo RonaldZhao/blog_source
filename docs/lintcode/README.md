@@ -143,6 +143,69 @@ public class Rectangle {
 }
 ```
 
+### 632. 二叉树的最大节点
+
+```python
+# Python3
+class Solution:
+    """
+    @param: root: the root of tree
+    @return: the max node
+    """
+    def maxNode(self, root):
+        if root is None:
+            return root
+        left = self.maxNode(root.left)  # 获取左子树的最大结点
+        right = self.maxNode(root.right)  # 获取右子树的最大结点
+        return self.max(root, self.max(left, right))
+
+    def max(self, a, b):
+        '''
+        @param: a: a TreeNode
+        @param: b: another TreeNode
+        @return: the max TreeNode between a and b
+        '''
+        if a is None:
+            return b
+        if b is None:
+            return a
+        if a.val > b.val:
+            return a
+        return b
+
+```
+
+```java
+// Java
+public class Solution {
+    /*
+     * @param root: the root of tree
+     * @return: the max node
+     */
+    public TreeNode maxNode(TreeNode root) {
+        if(root == null) {
+            return root;
+        }
+        TreeNode left = maxNode(root.left);
+        TreeNode right = maxNode(root.right);
+        return max(root, max(left, right));
+    }
+
+    TreeNode max(TreeNode a, TreeNode b) {
+        if(a == null) {
+            return b;
+        }
+        if(b == null) {
+            return a;
+        }
+        if(a.val > b.val) {
+            return a;
+        }
+        return b;
+    }
+}
+```
+
 ## 简单级
 
 ## 中等级
