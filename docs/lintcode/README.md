@@ -206,6 +206,52 @@ public class Solution {
 }
 ```
 
+### 763. 进制转换
+
+```python
+# Python3
+class Solution:
+    """
+    @param n: a decimal number
+    @param k: a Integer represent base-k
+    @return: a base-k number
+    """
+    def hexConversion(self, n, k):
+        if n == 0:
+            return '0'
+        ret = ''
+        while n > 0:
+            t = n % k
+            if t <= 9:
+                ret = str(t) + ret
+            else:
+                import string
+                ret = string.ascii_uppercase[:6][t-10] + ret
+            n //= k
+        return ret
+
+```
+
+```java
+// Java
+public String hexConversion(int n, int k) {
+    if(n == 0) {
+        return "0";
+    }
+    String ret = "";
+    while(n > 0) {
+        int t = n % k;
+        if(t <= 9) {
+            ret = (char)('0' + t) + ret;
+        } else {
+            ret = (char)('A' + t - 10) + ret;
+        }
+        n /= k;
+    }
+    return ret;
+}
+```
+
 ## 简单级
 
 ## 中等级
