@@ -18,6 +18,8 @@
 
 ## Vim
 
+### [Win 安装 Chocolatey 和 Vim](./chocolatey/)
+
 ### [Vim的分屏功能](./vim/screen-split.md)
 
 ## Visual Studio Code
