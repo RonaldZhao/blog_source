@@ -254,6 +254,58 @@ public String hexConversion(int n, int k) {
 
 ## 简单级
 
+### 1038. Jewels and Stones
+
+```python
+# Python3
+class Solution:
+    """
+    @param J: the types of stones that are jewels
+    @param S: representing the stones you have
+    @return: how many of the stones you have are also jewels
+    """
+    def numJewelsInStones(self, J, S):
+        from collections import defaultdict
+        dictS = defaultdict(int)
+        for c in S:
+            dictS[c] += 1
+        ret = 0
+        for c in J:
+            ret += dictS[c]
+        return ret
+
+```
+
+```java
+// Java
+public class Solution {
+    /**
+     * @param J: the types of stones that are jewels
+     * @param S: representing the stones you have
+     * @return: how many of the stones you have are also jewels
+     */
+    public int numJewelsInStones(String J, String S) {
+        int ret = 0;
+        char[] cs = S.toCharArray();
+        char[] cj = J.toCharArray();
+        HashMap<Character, Integer> map = new HashMap<>();
+        for(char c : cs) {
+            if(map.get(c) == null) {
+                map.put(c, 1);
+            } else {
+                map.put(c, map.get(c)+1);
+            }
+        }
+        for(char c : cj) {
+            if(map.get(c) != null) {
+                ret += map.get(c);
+            }
+        }
+        return ret;
+    }
+}
+```
+
 ## 中等级
 
 ## 困难级
