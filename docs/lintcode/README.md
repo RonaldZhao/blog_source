@@ -411,6 +411,49 @@ public class Solution {
 }
 ```
 
+### 1126. Merge Two Binary Trees
+
+```python
+# Python3
+class Solution:
+    """
+    @param t1: the root of the first tree
+    @param t2: the root of the second tree
+    @return: the new binary tree after merge
+    """
+    def mergeTrees(self, t1, t2):
+        if t1 and t2:
+            t1.val = t1.val + t2.val
+            t1.left = self.mergeTrees(t1.left, t2.left)
+            t1.right = self.mergeTrees(t1.right, t2.right)
+        if t2:
+            return t2
+        return t1
+
+```
+
+```java
+// Java
+public class Solution {
+    /**
+     * @param t1: the root of the first tree
+     * @param t2: the root of the second tree
+     * @return: the new binary tree after merge
+     */
+    public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
+        if(t1 != null && t2 != null) {
+            t1.val = t1.val + t2.val;
+            t1.left = mergeTrees(t1.left, t2.left);
+            t1.right = mergeTrees(t1.right, t2.right);
+        }
+        else if(t2 != null) {
+            return t2;
+        }
+        return t1;
+    }
+}
+```
+
 ### 1546. 零钱问题
 
 ```python
