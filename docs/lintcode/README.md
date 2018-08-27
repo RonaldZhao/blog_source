@@ -254,6 +254,81 @@ public String hexConversion(int n, int k) {
 
 ## 简单级
 
+### 495. 实现栈
+
+```python
+# Python3
+class Stack:
+    def __init__(self):
+        self.lst = []
+
+    """
+    @param: x: An integer
+    @return: nothing
+    """
+    def push(self, x):
+        self.lst.append(x)
+
+    """
+    @return: nothing
+    """
+    def pop(self):
+        if not self.isEmpty():
+            del self.lst[-1]
+
+    """
+    这个要注意返回是最后一个元素的值...
+    @return: An integer
+    """
+    def top(self):
+        return self.lst[-1]
+
+    """
+    @return: True if the stack is empty
+    """
+    def isEmpty(self):
+        return len(self.lst) == 0
+
+```
+
+```java
+// Java
+public class Stack {
+    private LinkedList list;
+    Stack() {
+        this.list = new LinkedList();
+    }
+    /*
+     * @param x: An integer
+     * @return: nothing
+     */
+    public void push(int x) {
+        this.list.push(x);
+    }
+
+    /*
+     * @return: nothing
+     */
+    public void pop() {
+        this.list.pop();
+    }
+
+    /*
+     * @return: An integer
+     */
+    public int top() {
+        return (int)this.list.getFirst();
+    }
+
+    /*
+     * @return: True if the stack is empty
+     */
+    public boolean isEmpty() {
+        return this.list.size() == 0;
+    }
+}
+```
+
 ### 1038. Jewels and Stones
 
 ```python
