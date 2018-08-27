@@ -143,6 +143,42 @@ public class Rectangle {
 }
 ```
 
+### 466. 链表节点计数
+
+```python
+# Python3
+class Solution:
+    """
+    @param head: the first node of linked list.
+    @return: An integer
+    """
+    def countNodes(self, head):
+        ret = 0
+        while head:
+            ret += 1
+            head = head.next
+        return ret
+
+```
+
+```java
+// Java
+public class Solution {
+    /**
+     * @param head: the first node of linked list.
+     * @return: An integer
+     */
+    public int countNodes(ListNode head) {
+        int ret = 0;
+        while(head != null) {
+            ret += 1;
+            head = head.next;
+        }
+        return ret;
+    }
+}
+```
+
 ### 479. 数组第二大数
 
 ```python
