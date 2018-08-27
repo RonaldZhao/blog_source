@@ -47,6 +47,63 @@ public long trailingZeros(long n) {
 }
 ```
 
+### 366. 斐波纳契数列
+
+```python
+# Python3
+class Solution:
+    """
+    @param n: an integer
+    @return: an ineger f(n)
+    """
+    def generate_next(self):
+        a, b = 0, 1
+        yield a  # 第一个数要单独返回
+        while True:
+            yield b
+            a, b = b, a+b
+
+    def fibonacci(self, n):
+        if n < 1:
+            return None
+        i = 1
+        g = self.generate_next()
+        while i < n:
+            next(g)
+            i += 1
+        return next(g)
+
+```
+
+```java
+// Java
+public class Solution {
+    /**
+     * @param n: an integer
+     * @return: an ineger f(n)
+     */
+    public int fibonacci(int n) {
+        if(n < 1) {
+            return -1;
+        }
+        if(n == 1) {
+            return 0;
+        }
+        if(n == 2 || n == 3) {
+            return 1;
+        }
+        int a = 1;
+        int b = 1;
+        for(int i=3; i<n; i++) {
+            int t = a;
+            a = b;
+            b = t+b;
+        }
+        return b;
+    }
+}
+```
+
 ### 452. 删除链表中的元素
 
 ```python
