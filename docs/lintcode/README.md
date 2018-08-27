@@ -329,6 +329,36 @@ public class Stack {
 }
 ```
 
+### 835. Hamming距离
+
+```python
+# Python3
+class Solution:
+    """
+    @param x: an integer
+    @param y: an integer
+    @return: return an integer, denote the Hamming Distance between two integers
+    """
+    def hammingDistance(self, x, y):
+        s = bin(x^y)[2:]
+        return s.count('1')
+
+```
+
+```java
+// Java
+public class Solution {
+    /**
+     * @param x: an integer
+     * @param y: an integer
+     * @return: return an integer, denote the Hamming Distance between two integers
+     */
+    public int hammingDistance(int x, int y) {
+        return Integer.toBinaryString(x^y).replaceAll("0", "").length();
+    }
+}
+```
+
 ### 1038. Jewels and Stones
 
 ```python
