@@ -143,6 +143,34 @@ public class Rectangle {
 }
 ```
 
+### 479. 数组第二大数
+
+```python
+# Python3
+class Solution:
+    """
+    @param nums: An integer array
+    @return: The second max number in the array.
+    """
+    def secondMax(self, nums):
+        return sorted(nums)[-2]
+
+```
+
+```java
+// Java
+public class Solution {
+    /**
+     * @param nums: An integer array
+     * @return: The second max number in the array.
+     */
+    public int secondMax(int[] nums) {
+        java.util.Arrays.sort(nums);
+        return nums[nums.length-2];
+    }
+}
+```
+
 ### 632. 二叉树的最大节点
 
 ```python
