@@ -143,6 +143,62 @@ public class Rectangle {
 }
 ```
 
+### 463. 整数排序
+
+```python
+# Python3
+class Solution:
+    """
+    @param A: an integer array
+    @return: nothing
+    """
+    def bubble_sort(self, A):
+        if len(A) > 1:
+            for i in range(len(A)):
+                for j in range(1, len(A)-i):
+                    if A[j-1] > A[j]:
+                        A[j-1], A[j] = A[j], A[j-1]
+
+    def selection_sort(self, A):
+        if len(A) > 1:
+            for i in range(len(A)):
+                min = i
+                for j in range(i+1, len(A)):
+                    if A[j] < A[min]:
+                        min = j
+                A[i], A[min] = A[min], A[i]
+
+    def sortIntegers(self, A):
+        # bubble sort
+        # self.bubble_sort(A)
+
+        # selection sort
+        self.selection_sort(A)
+
+```
+
+```java
+// Java
+public class Solution {
+    /**
+     * @param A: an integer array
+     * @return: nothing
+     */
+    public void sortIntegers(int[] A) {
+        // bubble sort
+        for(int i=0; i<A.length; i++) {
+            for(int j=1; j<A.length-i; j++) {
+                if(A[j-1] > A[j]) {
+                    int t = A[j-1];
+                    A[j-1] = A[j];
+                    A[j] = t;
+                }
+            }
+        }
+    }
+}
+```
+
 ### 466. 链表节点计数
 
 ```python
