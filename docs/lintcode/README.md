@@ -411,6 +411,47 @@ public class Solution {
 }
 ```
 
+### 1546. 零钱问题
+
+```python
+# python3
+class Solution:
+    """
+    @param n: The guest paid
+    @param m: the price
+    @return: the sum of the number of banknotes
+    """
+    def coinProblem(self, n, m):
+        x = n - m
+        ret = 0
+        for i in [100, 50, 20, 10, 5, 2, 1]:
+            ret += x // i
+            x %= i
+        return ret
+
+```
+
+```java
+// Java
+public class Solution {
+    /**
+     * @param n: The guest paid
+     * @param m: the price
+     * @return: the sum of the number of banknotes
+     */
+    public int coinProblem(int n, int m) {
+        int x = n - m;
+        int ret = 0;
+        int[] money = {100,50,20,10,5,2,1};
+        for(int i : money) {
+            ret += x / i;
+            x %= i;
+        }
+        return ret;
+    }
+}
+```
+
 ## 中等级
 
 ## 困难级
