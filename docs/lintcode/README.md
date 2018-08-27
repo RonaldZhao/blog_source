@@ -171,6 +171,40 @@ public class Solution {
 }
 ```
 
+### 484. 交换数组两个元素
+
+```python
+# Python3
+class Solution:
+    """
+    @param A: An integer array
+    @param index1: the first index
+    @param index2: the second index
+    @return: nothing
+    """
+    def swapIntegers(self, A, index1, index2):
+        A[index1], A[index2] = A[index2], A[index1]
+
+```
+
+```java
+// Java
+public class Solution {
+    /**
+     * @param A: An integer array
+     * @param index1: the first index
+     * @param index2: the second index
+     * @return: nothing
+     */
+    public void swapIntegers(int[] A, int index1, int index2) {
+        // write your code here
+        int t = A[index1];
+        A[index1] = A[index2];
+        A[index2] = t;
+    }
+}
+```
+
 ### 632. 二叉树的最大节点
 
 ```python
