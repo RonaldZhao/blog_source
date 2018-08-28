@@ -465,6 +465,41 @@ public String hexConversion(int n, int k) {
 
 ## 简单级
 
+### 365. 二进制中有多少个1
+
+```python
+# Python3
+class Solution:
+    """
+    @param: num: An integer
+    @return: An integer
+    """
+    def countOnes(self, num):
+        if num >= 0:
+            return bin(num)[2:].count('1')
+        else:
+            return 32 - bin(num)[2:].count('0')
+
+```
+
+```java
+// Java
+public class Solution {
+    /*
+     * @param num: An integer
+     * @return: An integer
+     */
+    public int countOnes(int num) {
+        int count = 0;
+        while(num != 0) {
+            num = num & (num-1);
+            count++;
+        }
+        return count;
+    }
+}
+```
+
 ### 474. 最近公共祖先 II
 
 ```python
