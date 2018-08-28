@@ -465,6 +465,65 @@ public String hexConversion(int n, int k) {
 
 ## 简单级
 
+### 474. 最近公共祖先 II
+
+```python
+# Python3
+class Solution:
+    """
+    @param: root: The root of the tree
+    @param: A: node in the tree
+    @param: B: node in the tree
+    @return: The lowest common ancestor of A and B
+    """
+    def lowestCommonAncestorII(self, root, A, B):
+        if root is None or root == A or root == B:
+            return root
+        if A is None or B is None:
+            return None
+        temp_list = []
+        indx = A
+        while indx:
+            temp_list.append(indx)
+            indx = indx.parent
+
+        indx = B
+        while indx:
+            if indx in temp_list:
+                return indx
+            indx = indx.parent
+
+```
+
+```java
+// Java
+public class Solution {
+    /*
+     * @param root: The root of the tree
+     * @param A: node in the tree
+     * @param B: node in the tree
+     * @return: The lowest common ancestor of A and B
+     */
+    public ParentTreeNode lowestCommonAncestorII(ParentTreeNode root, ParentTreeNode A, ParentTreeNode B) {
+        // write your code here
+        ArrayList<ParentTreeNode> list = new ArrayList<>();
+        ParentTreeNode indx = A;
+        while(indx != null) {
+            list.add(indx);
+            indx = indx.parent;
+        }
+        indx = B;
+        while(indx != null) {
+            if(list.contains(indx)) {
+                break;
+            }
+            indx = indx.parent;
+        }
+        return indx;
+    }
+}
+```
+
 ### 495. 实现栈
 
 ```python
