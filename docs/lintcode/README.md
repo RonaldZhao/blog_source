@@ -549,6 +549,61 @@ public class Solution {
 }
 ```
 
+### 174. 删除链表中倒数第n个节点
+
+```python
+# Python3
+class Solution:
+    """
+    @param head: The first node of linked list.
+    @param n: An integer
+    @return: The head of linked list.
+    """
+    def removeNthFromEnd(self, head, n):
+        pre_delete = ListNode(0, head)  # 用来指向要删除结点前面的那个结点, val是啥无所谓
+        indx = head
+        for i in range(n):
+            indx = indx.next
+        while indx:
+            indx = indx.next
+            pre_delete = pre_delete.next
+        if pre_delete.next != head:  # 如果要删除的不是头结点
+            pre_delete.next = pre_delete.next.next
+        else:
+            head = head.next
+        return head
+
+```
+
+```java
+// Java
+public class Solution {
+    /**
+     * @param head: The first node of linked list.
+     * @param n: An integer
+     * @return: The head of linked list.
+     */
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        ListNode pre_delete = new ListNode(0);
+        pre_delete.next = head;
+        ListNode indx = head;
+        for(int i=0; i<n; i++) {
+            indx = indx.next;
+        }
+        while(indx != null) {
+            indx = indx.next;
+            pre_delete = pre_delete.next;
+        }
+        if(pre_delete.next != head) {
+            pre_delete.next = pre_delete.next.next;
+        } else {
+            head = head.next;
+        }
+        return head;
+    }
+}
+```
+
 ### 365. 二进制中有多少个1
 
 ```python
