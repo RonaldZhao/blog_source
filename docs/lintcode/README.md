@@ -465,6 +465,90 @@ public String hexConversion(int n, int k) {
 
 ## 简单级
 
+### 165. 合并两个排序链表
+
+```python
+# Python3
+class Solution:
+    """
+    @param l1: ListNode l1 is the head of the linked list
+    @param l2: ListNode l2 is the head of the linked list
+    @return: ListNode head of linked list
+    """
+    def mergeTwoLists(self, l1, l2):
+        if l1 is None:
+            return l2
+        if l2 is None:
+            return l1
+        head = None
+        if l1.val <= l2.val:
+            head = l1
+            l1 = l1.next
+        else:
+            head = l2
+            l2 = l2.next
+        indx = head
+        while l1 and l2:
+            if l1.val <= l2.val:
+                indx.next = l1
+                l1 = l1.next
+            else:
+                indx.next = l2
+                l2 = l2.next
+            indx = indx.next
+        if l1:
+            indx.next = l1
+        if l2:
+            indx.next = l2
+        return head
+
+```
+
+```java
+// Java
+public class Solution {
+    /**
+     * @param l1: ListNode l1 is the head of the linked list
+     * @param l2: ListNode l2 is the head of the linked list
+     * @return: ListNode head of linked list
+     */
+    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        if(l1 == null) {
+            return l2;
+        }
+        if(l2 == null) {
+            return l1;
+        }
+        ListNode head;
+        if(l1.val <= l2.val) {
+            head = l1;
+            l1 = l1.next;
+        } else {
+            head = l2;
+            l2 = l2.next;
+        }
+        ListNode indx = head;
+        while(l1 != null && l2 != null) {
+            if(l1.val <= l2.val) {
+                indx.next = l1;
+                l1 = l1.next;
+            } else {
+                indx.next = l2;
+                l2 = l2.next;
+            }
+            indx = indx.next;
+        }
+        if(l1 != null) {
+            indx.next = l1;
+        }
+        if(l2 != null) {
+            indx.next = l2;
+        }
+        return head;
+    }
+}
+```
+
 ### 365. 二进制中有多少个1
 
 ```python
