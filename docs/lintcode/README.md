@@ -639,6 +639,36 @@ public class Solution {
 }
 ```
 
+### 408. 二进制求和
+
+```python
+# Python3
+class Solution:
+    """
+    @param a: a number
+    @param b: a number
+    @return: the result
+    """
+    def addBinary(self, a, b):
+        return bin(int(a, base=2)+int(b, base=2))[2:]
+
+```
+
+```java
+// Java
+import java.math.BigInteger;
+public class Solution {
+    /**
+     * @param a: a number
+     * @param b: a number
+     * @return: the result
+     */
+    public String addBinary(String a, String b) {
+        return (new BigInteger(a, 2).add(new BigInteger(b, 2))).toString(2);
+    }
+}
+```
+
 ### 474. 最近公共祖先 II
 
 ```python
