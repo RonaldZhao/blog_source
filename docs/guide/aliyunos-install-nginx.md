@@ -57,7 +57,7 @@ Nov 01 16:23:32 jesuszhao systemd[1]: Started nginx - high performance web serve
 # vim default.conf # 最好先备份：cp default.conf default.conf.bak
 ```
 
- 打开default.conf文件后修改server的花括号之间的以下几项： 
+ 打开default.conf文件后修改server的花括号之间的以下几项：
 
 1. **server_name**：改成你的域名，如：`ronaldzhao.top`（不要带http或https前缀）
 2. **root**：改成你的博客目录的路径，如：`/var/www/blog `
@@ -65,7 +65,7 @@ Nov 01 16:23:32 jesuszhao systemd[1]: Started nginx - high performance web serve
 
 ## 开启https
 
-1. 首先去[阿里云](https://common-buy.aliyun.com/?spm=5176.2020520163.cas.1.7f850e31atqmMO&commodityCode=cas#/buy)、[腾讯云](https://console.cloud.tencent.com/ssl/apply)、[七牛云](https://portal.qiniu.com/certificate/apply)等申请个免费的https证书。 
+1. 首先去[阿里云](https://common-buy.aliyun.com/?spm=5176.2020520163.cas.1.7f850e31atqmMO&commodityCode=cas#/buy)、[腾讯云](https://console.cloud.tencent.com/ssl/apply)、[七牛云](https://portal.qiniu.com/certificate/apply)等申请个免费的https证书。
 
 2. 待证书发下来后把nginx版的下载下来，然后登录ECS创建以下目录：
 

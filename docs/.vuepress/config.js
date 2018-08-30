@@ -8,14 +8,12 @@ module.exports = {
             // 编辑链接文字
             editLinkText: '在 GitHub 上编辑此页',
             // Service Worker 的配置
-            /*
             serviceWorker: {
                 updatePopup: {
-                    message: "发现新内容可用.",
+                    message: "检测到文章发生更新.",
                     buttonText: "刷新"
                 }
             },
-            */
         }
     },
     head: [
@@ -25,13 +23,67 @@ module.exports = {
         lineNumbers: true
     },
     themeConfig: {
-        sidebar: 'auto',
-        /*
-        sidebar: [
-            '/',
-            '/about/',
-        ],
-        */
+        // sidebar: 'auto',
+        sidebar: {
+          '/python3/': [
+            '',// 放最新文章, 其他同理
+            'blzyy',
+            'closure',
+            'interview',
+            'multiple-inheritance-mixin',
+            'traps',
+            'yield-generator',
+            'yield-from',
+          ],
+          '/lintcode/': [
+            'level-0',
+            'level-1',
+            'level-2',
+            'level-3',
+            'level-4',
+          ],
+          '/leetcode/': [
+            //'',
+            'easy',
+            'medium',
+            'hard',
+          ],
+          '/codewars/': [
+            '',
+          ],
+          '/mysql/': [
+            '',
+          ],
+          '/redis/': [
+            '',
+          ],
+          '/algorithms/': [
+            '',
+          ],
+          '/guide/': [
+            '',
+            // 'aliyunos-install-nginx',
+            'kxsw',
+          ],
+          '/notes/': [
+            '',
+            // 'lastUpdated',
+          ],
+          '/devtools/': [
+            '',
+            // 'chocolatey',
+            'powershell',
+            'atom-flight-manual',
+            'vscode-config',
+            'from-pip-to-pipenv',
+            'vim-screen-split',
+            'git-cheatsheet'
+          ],
+          '/': [
+            '',
+            'about',
+          ]
+        },
         repo: 'https://github.com/RonaldZhao/RonaldZhao.github.io',
         // 默认是 false, 设置为 true 来启用
         editLinks: false,
@@ -52,9 +104,9 @@ module.exports = {
             {
               text: '刷题',
               items: [
-                {text: 'LintCode', link: '/lintcode/'},
+                {text: 'LintCode', link: '/lintcode/level-0'},
+                {text: 'LeetCode', link: '/leetcode/easy'},
                 {text: 'CodeWars', link: '/codewars/'},
-                // {text: 'LeetCode', link: '/leetcode/'},
               ]
             },
             {
@@ -64,11 +116,11 @@ module.exports = {
                 {text: 'Redis', link: '/redis/'},
               ]
             },
-            {text: 'Algorithm', link: '/algorithms/'},
+            {text: 'Algorithms', link: '/algorithms/'},
             {text: 'Guide', link: '/guide/'},
             {text: 'Notes', link: '/notes/'},
             {text: 'Tools', link: '/devtools/'},
-            {text: 'About', link: '/about/'},
+            {text: 'About', link: '/about'},
             {text: '💗', link: '/love/'},
         ]
     },
