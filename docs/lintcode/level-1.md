@@ -508,6 +508,43 @@ public class Solution {
 }
 ```
 
+## 1332. Number of 1 Bits
+
+```python
+# Python3
+class Solution:
+    """
+    @param n: an unsigned integer
+    @return: the number of â1' bits
+    """
+    def hammingWeight(self, n):
+        # 利用一个整数和本身减一的数相与可以消掉最后一个1的特点
+        ret = 0
+        while n:
+            n &= n-1
+            ret += 1
+        return ret
+
+```
+
+```java
+//Java
+public class Solution {
+    /**
+     * @param n: an unsigned integer
+     * @return: the number of â€™1' bits
+     */
+    public int hammingWeight(int n) {
+        int ret = 0;
+        while(n != 0) {
+            n &= n-1;
+            ++ret;
+        }
+        return ret;
+    }
+}
+```
+
 ## 1546. 零钱问题
 
 ```python
