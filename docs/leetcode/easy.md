@@ -1,5 +1,20 @@
 # Easy
 
+## 66. Plus One
+
+```python
+# Python3
+class Solution:
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        n = int(''.join(map(str, digits)))
+        return list(map(int, list(str(n+1))))
+
+```
+
 ## 724. Find Pivot Index
 
 ```python
