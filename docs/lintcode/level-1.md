@@ -413,6 +413,29 @@ public class Solution {
 }
 ```
 
+## 1013. Unique Morse Code Words
+
+```python
+# Python3
+class Solution:
+    """
+    @param words: the given list of words
+    @return: the number of different transformations among all words we have
+    """
+    def uniqueMorseRepresentations(self, words):
+        d = dict()
+        morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+        for c in 'abcdefghijklmnopqrstuvwxyz':
+            d[c] = morse.pop(0)
+        for i in range(len(words)):
+            s = words[i]
+            words[i] = ''
+            for c in s:
+                words[i] += d[c]
+        return len(set(words))
+
+```
+
 ## 1038. Jewels and Stones
 
 ```python
