@@ -15,6 +15,35 @@ class Solution:
 
 ```
 
+## 118. Pascal's Triangle
+
+```python
+# Python3
+class Solution:
+    def generate(self, numRows):
+        """
+        :type numRows: int
+        :rtype: List[List[int]]
+        """
+        if numRows == 0:
+            return []
+        if numRows == 1:
+            return [[1]]
+        if numRows == 2:
+            return [[1], [1, 1]]
+        ret = [[1], [1, 1]]
+        pre_row = ret[1]
+        for i in range(2, numRows):
+            cur_row = [1]
+            for j in range(i-1):
+                cur_row.append(pre_row[j] + pre_row[j+1])
+            cur_row.append(1)
+            ret.append(cur_row)
+            pre_row = cur_row
+        return ret
+
+```
+
 ## 724. Find Pivot Index
 
 ```python
