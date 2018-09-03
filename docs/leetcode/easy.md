@@ -163,6 +163,19 @@ class Solution:
         return ret
 
 ```
+## 344. Reverse String
+
+```python
+# Python3
+class Solution:
+    def reverseString(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        return s[::-1]
+
+```
 
 ## 724. Find Pivot Index
 
