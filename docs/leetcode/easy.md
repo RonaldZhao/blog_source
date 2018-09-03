@@ -1,5 +1,24 @@
 # Easy
 
+## 28. Implement strStr()
+
+```python
+# Python3
+class Solution:
+    def strStr(self, haystack, needle):
+        """
+        :type haystack: str
+        :type needle: str
+        :rtype: int
+        """
+        if needle == '':
+            return 0
+        if needle in haystack:
+            return haystack.index(needle)
+        return -1
+
+```
+
 ## 66. Plus One
 
 ```python
