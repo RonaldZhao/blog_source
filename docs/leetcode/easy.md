@@ -15,6 +15,21 @@ class Solution:
 
 ```
 
+## 67. Add Binary
+
+```python
+# Python3
+class Solution:
+    def addBinary(self, a, b):
+        """
+        :type a: str
+        :type b: str
+        :rtype: str
+        """
+        return bin(int(a, base=2)+int(b, base=2))[2:]
+
+```
+
 ## 118. Pascal's Triangle
 
 ```python
