@@ -1,5 +1,91 @@
 # Easy
 
+## 14. Longest Common Prefix
+
+```python
+# Python3
+class Solution:
+    # Approach 1: Horizontal Scanning
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if strs is None:
+          return ''
+        length = len(strs)
+        if length == 0:
+            return ''
+        if length == 1:
+            return strs[0]
+        ret = strs[0][:]
+        for i in range(1, length):
+            cur_len = len(strs[i])
+            if cur_len == 0:
+                return ''
+            m = min(len(ret), cur_len)
+            for j in range(m):
+                if ret[j] != strs[i][j]:
+                    if j == 0:
+                        return ''
+                    ret = ret[:j]
+                    break
+                if j == m-1:
+                    ret = ret[:m]
+        return ret
+
+    # Approach 2: Vertical Scanning
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if strs is None:
+            return ''
+        length = len(strs)
+        if length == 0:
+            return ''
+        if length == 1:
+            return strs[0]
+        ret = strs[0][:]
+        for i in range(len(strs[0])):
+            c = ret[i]
+            for j in range(1, len(strs)):
+                if strs[j] == '' or i == len(strs[j]):
+                    return strs[j]
+                if c != strs[j][i]:
+                    return ret[:i]
+        return ret
+
+    # Approach 3: Divide and Conquer
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        if strs is None or len(strs) == 0:
+            return ''
+        return self.LCP(strs, 0, len(strs)-1)
+
+    def LCP(self, strs, start, end):
+        if start == end:
+            return strs[start]
+        mid = (start + end) // 2
+        left = self.LCP(strs, start, mid)
+        right = self.LCP(strs, mid+1, end)
+        return self.Common_Prefix(left, right)
+
+    def Common_Prefix(self, left, right):
+        m = min(len(left), len(right))
+        ret = ''
+        for i in range(m):
+            if left[i] != right[i]:
+                return ret
+            ret += left[i]
+        return ret
+
+```
+
 ## 28. Implement strStr()
 
 ```python
