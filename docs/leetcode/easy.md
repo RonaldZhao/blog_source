@@ -177,6 +177,23 @@ class Solution:
 
 ```
 
+## 561. Array Partition I
+
+```python
+# Python3
+class Solution:
+    def arrayPairSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if len(nums) == 0:
+            return 0
+        nums.sort()
+        return sum(nums[::2])
+
+```
+
 ## 724. Find Pivot Index
 
 ```python
