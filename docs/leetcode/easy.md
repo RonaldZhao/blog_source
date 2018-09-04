@@ -222,6 +222,20 @@ class Solution:
 
 ```
 
+## 485. Max Consecutive Ones
+
+```python
+# Python3
+class Solution:
+    def findMaxConsecutiveOnes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        return max(list(map(len, ''.join(map(str, nums)).split('0'))))
+
+```
+
 ## 561. Array Partition I
 
 ```python
