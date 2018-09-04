@@ -42,6 +42,30 @@ class Solution:
 
 ```
 
+## 209. Minimum Size Subarray Sum
+
+```python
+# Python3
+class Solution:
+    def minSubArrayLen(self, s, nums):
+        """
+        :type s: int
+        :type nums: List[int]
+        :rtype: int
+        """
+        # 滑动窗口, O(n)
+        ret = float('inf')
+        left, cur_sum = 0, 0
+        for i in range(len(nums)):
+            cur_sum += nums[i]
+            while left <= i and cur_sum >= s:
+                ret = min(ret, i-left+1)
+                cur_sum -= nums[left]
+                left += 1
+        return ret if ret != float('inf') else 0
+
+```
+
 ## 498. Diagonal Traverse
 
 ```python
