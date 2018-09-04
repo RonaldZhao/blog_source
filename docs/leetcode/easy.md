@@ -163,6 +163,31 @@ class Solution:
         return ret
 
 ```
+
+## 167. Two Sum II - Input array is sorted
+
+```python
+# Python3
+class Solution:
+    def twoSum(self, numbers, target):
+        """
+        :type numbers: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        # 参考: https://www.jiuzhang.com/solution/two-sum-ii-input-array-is-sorted/#tag-other-lang-python
+        left, right = 0, len(numbers)-1
+        while left < right:
+            if numbers[left] + numbers[right] == target:
+                return [left+1, right+1]
+            elif numbers[left] + numbers[right] > target:
+                right -= 1
+            else:
+                left += 1
+        return None
+
+```
+
 ## 344. Reverse String
 
 ```python
