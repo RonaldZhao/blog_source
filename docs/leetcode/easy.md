@@ -208,6 +208,26 @@ class Solution:
 
 ```
 
+## 189. Rotate Array
+
+```python
+# Python3
+class Solution:
+    def rotate(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        l = len(nums)
+        if k == 0 or k == l:
+            return
+        k = k % l
+        nums.extend(nums[:l-k])
+        del nums[:l-k]
+
+```
+
 ## 344. Reverse String
 
 ```python
