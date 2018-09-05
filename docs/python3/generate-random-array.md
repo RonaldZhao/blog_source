@@ -15,7 +15,7 @@ def generate_random_array(n=10, left=1, right=100):
     :type right: int, 指定范围的最大值, 默认为100
     :rtype: list, 返回一个list[int]
     """
-    if n <= 0:
+    if n <= 0 or left > right:
       return []
     ret = []
     random.seed(time.time())

@@ -27,7 +27,8 @@ module.exports = {
         sidebar: {
           '/python3/': [
             '',// 放最新文章, 其他同理
-            //'generate-random-array',
+            //'python-decorator',
+            'generate-random-array',
             'python-electronjs',
             'blzyy',
             'closure',
@@ -61,6 +62,7 @@ module.exports = {
           ],
           '/algorithms/': [
             '',
+            'algorithm-and-data-structure',
           ],
           '/guide/': [
             '',
