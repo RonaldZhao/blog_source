@@ -27,6 +27,8 @@ module.exports = {
         sidebar: {
           '/python3/': [
             '',// 放最新文章, 其他同理
+            //'generate-random-array',
+            'python-electronjs',
             'blzyy',
             'closure',
             'interview',
