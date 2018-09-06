@@ -15,15 +15,15 @@
 `Python3`代码实现:
 
 ```python
-def deco(func):
+def time_consuming_deco(func):
     def wrapper(*args, **kwargs):
         start = time.clock()
         func(*args, **kwargs)
         end = time.clock()
-        print('time consuming: {0} clock'.format(end - start))
+        print('{0} time consuming: {1} clock'.format(func.__name__, end - start))
     return wrapper
 
-@deco
+@time_consuming_deco
 def selection_sort(arr):
     """
     :type arr: list[int] / list[float] / list[str]
@@ -59,15 +59,15 @@ def selection_sort(arr):
 `Python3`代码实现:
 
 ```python
-def deco(func):
+def time_consuming_deco(func):
     def wrapper(*args, **kwargs):
         start = time.clock()
         func(*args, **kwargs)
         end = time.clock()
-        print('time consuming: {0} clock'.format(end - start))
+        print('{0} time consuming: {1} clock'.format(func.__name__, end - start))
     return wrapper
 
-@deco
+@time_consuming_deco
 def insertion_sort(arr):  # 基础版本
     for i in range(1, len(arr)):
         for j in range(i, 0, -1):
@@ -76,7 +76,7 @@ def insertion_sort(arr):  # 基础版本
             else:
                 break
 
-@deco
+@time_consuming_deco
 def insertion_sort(arr):  # 改进版本1
     for i in range(1, len(arr)):
         cur = arr[i]
@@ -121,5 +121,62 @@ def insertion_sort(arr):  # 改进版本1
 `Python3`代码实现:
 
 ```python
+
+```
+
+### 归并排序
+
+基本思想: TODO
+
+时间复杂度: O(nlogn)
+
+空间复杂度: O(n)
+
+适用情况: TODO
+
+`Python3`代码实现:
+
+```python
+def time_consuming_deco(func):
+    def wrapper(*args, **kwargs):
+        start = time.clock()
+        func(*args, **kwargs)
+        end = time.clock()
+        print('{0} time consuming: {1} clock'.format(func.__name__, end - start))
+    return wrapper
+
+@time_consuming_deco
+def merge_sort(arr):
+    __merge_sort(arr, 0, len(arr)-1)
+
+def __merge_sort(arr, l, r):
+    """
+    递归使用归并排序, 对arr[l, r]的范围进行排序
+    """
+    if l >= r:
+        return
+    m = (l + r) // 2
+    __merge_sort(arr, l, m)
+    __merge_sort(arr, m+1, r)
+    __merge(arr, l, m, r)
+
+def __merge(arr, l, m, r):
+    """
+    将arr[l, m]和arr[m+1, r]两部分进行归并
+    """
+    temp_arr = arr[l:r+1]
+    i, j, k = l, m+1, l
+    while k <= r and i <= m and j <= r:
+        if temp_arr[i-l] < temp_arr[j-l]:
+            arr[k] = temp_arr[i-l]
+            i += 1
+        else:
+            arr[k] = temp_arr[j-l]
+            j += 1
+        k += 1
+    if i <= m:
+        arr[k:r+1] = temp_arr[i-l:m+1-l]
+    if j <= r:
+        arr[k:r+1] = temp_arr[j-l:r+1-l]
 
 ```
