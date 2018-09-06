@@ -4,11 +4,13 @@
 
 ### 选择排序
 
+基本思想: TODO
+
 时间复杂度: O(n^2)
 
 空间复杂度: O(1)
 
-适用情况: pass
+适用情况: TODO
 
 `Python3`代码实现:
 
@@ -43,3 +45,81 @@ def selection_sort(arr):
 ::: tip TODO
 画出此算法随着数据规模的增长所耗时间的变化曲线.
 :::
+
+### 插入排序
+
+基本思想: TODO
+
+时间复杂度: O(n^2)
+
+空间复杂度: O(1)
+
+适用情况: 对于**近乎有序**的元素序列, 性能远远优于选择排序.
+
+`Python3`代码实现:
+
+```python
+def deco(func):
+    def wrapper(*args, **kwargs):
+        start = time.clock()
+        func(*args, **kwargs)
+        end = time.clock()
+        print('time consuming: {0} clock'.format(end - start))
+    return wrapper
+
+@deco
+def insertion_sort(arr):  # 基础版本
+    for i in range(1, len(arr)):
+        for j in range(i, 0, -1):
+            if arr[j] < arr[j-1]:
+                arr[j], arr[j-1] = arr[j-1], arr[j]
+            else:
+                break
+
+@deco
+def insertion_sort(arr):  # 改进版本1
+    for i in range(1, len(arr)):
+        cur = arr[i]
+        j = i
+        while j > 0 and arr[j-1] > cur:
+            arr[j] = arr[j-1]
+            j -= 1
+        arr[j] = e
+
+```
+
+::: tip TODO
+画出此算法随着数据规模的增长所耗时间的变化曲线.
+:::
+
+### 冒泡排序
+
+基本思想: TODO
+
+时间复杂度: O(n^2)
+
+空间复杂度: O(1)
+
+适用情况: TODO
+
+`Python3`代码实现:
+
+```python
+
+```
+
+### 希尔排序
+
+基本思想: TODO
+
+时间复杂度: TODO
+
+空间复杂度: O(1)
+
+适用情况: TODO
+
+`Python3`代码实现:
+
+```python
+
+```
