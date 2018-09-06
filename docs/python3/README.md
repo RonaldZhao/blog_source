@@ -150,4 +150,85 @@ f('ronald')
 
 ## 带参数的装饰器
 
-未完待续...
+Python 装饰器还有更大的灵活性, 例如带参数的装饰器. 在上面的装饰器调用中, 该装饰器接收的唯一参数就是执行业务的`f`函数. 装饰器的语法允许我们在调用时提供其他参数, 比如`@decorator(a)`. 这样, 就为装饰器的编写和使用提供了更大的灵活性. 比如, 我们可以在装饰器中指定日志的等级, 因为不同的业务函数可能需要的日志等级是不一样的:
+
+```python
+def use_logging(level):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            if level == 'warn':
+                logging.warn('{0} is running.'.format(func.__name__))
+            elif level == 'info':
+                logging.info('{0} is running.'.format(func.__name__))
+            return func(*args, **kwargs)
+        return wrapper
+    return decorator
+
+@use_logging(level='warn')
+def f(name='ronald'):
+    print('i am {0}'.format(name))
+
+f()
+```
+
+上面的`use_logging`是允许带参数的装饰器. 它实际上是对原装饰器的一个函数封装, 并返回一个装饰器. 我们可以将它理解为一个含有参数的闭包. 当我们使用`@use_logging(level='warn')`调用的时候, Python 能够发现这一层的封装, 并把参数传递到装饰器的环境中.
+
+## 类装饰器
+
+Python 装饰器不仅可以是函数, 还可以是类. 相比函数装饰器, 类装饰器具有灵活度大, 高内聚, 封装性等优点. 使用类装饰器主要依靠类的`__call__`方法, 当使用`@`形式将装饰器附加到函数上时, 就会自动调用此方法:
+
+```python
+class F(object):
+    def __init__(self, func):
+        self.func = func
+
+    def __call__(self):
+        print('class decorator is running...')
+        self.func()
+        print('class decorator ended.')
+
+@F
+def f():
+    print('function f().')
+
+f()
+```
+
+<!-- ## functools.wraps
+
+使用装饰器极大地复用了代码, 但是有一个缺点就是原函数的元信息不见了. 比如函数的`docstring`, `__name__`, 参数列表, 如下例:
+
+```python
+def logged(func):
+    def with_logging(*args, **kwargs):
+        print(func.__name__)
+        print(func.__doc__)
+        return func(*args, **kwargs)
+    return with_logging
+
+@logged
+def f(x):
+   """does some math"""
+   return x + x * x
+
+f(5)
+``` -->
+
+## 装饰器顺序
+
+一个函数可以同时被多个装饰器修饰, 如:
+
+```python
+@a
+@b
+@c
+def f():
+    pass
+
+```
+
+它的执行顺序是从里到外(或者说从近到远), 即最先调用最里层的装饰器, 等效于:
+
+```python
+f = a(b(c(f)))
+```
