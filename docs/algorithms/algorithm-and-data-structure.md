@@ -250,3 +250,31 @@ def __partition(arr, l, r):
     return j
 
 ```
+
+## 查找算法
+
+### 二分查找
+
+时间复杂度: O(logn)
+
+`Python3`代码实现:
+
+```python
+def binary_search(arr, target):
+    """
+    :type arr:list[int/float/str] AESC
+    :type target: int/float/str
+    :rtype int: arr[target].index()
+    """
+    l, r = 0, len(arr)-1
+    while l <= r:
+        mid = (l + r) // 2
+        if target == arr[mid]:
+            return mid
+        if target > arr[mid]:
+            l = mid + 1
+        else:
+            r = mid - 1
+    return -1
+
+```
