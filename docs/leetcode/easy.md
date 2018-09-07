@@ -228,6 +228,78 @@ class Solution:
 
 ```
 
+## 283. Move Zeroes
+
+1. 未优化版: 时间复杂度 O(n), 空间复杂度 O(n)
+
+```python
+# Python3
+class Solution:
+    def moveZeroes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        length = len(nums)
+        if nums is None or length <= 1:
+            return
+        non_zero_elements = []
+        for i in range(length):
+            if nums[i] != 0:
+                non_zero_elements.append(nums[i])
+        for i in range(len(non_zero_elements)):
+            nums[i] = non_zero_elements[i]
+        for i in range(len(non_zero_elements), length):
+            nums[i] = 0
+
+```
+
+2. 优化版1: 时间复杂度 O(n) 空间复杂度 O(1)
+
+```python
+# Python3
+class Solution:
+    def moveZeroes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        length = len(nums)
+        if nums is None or length <= 1:
+            return
+        i = 0
+        for j in range(length):
+            if nums[j] != 0:
+                nums[i] = nums[j]
+                i += 1
+        while i < length:
+            nums[i] = 0
+            i += 1
+
+```
+
+3. 优化版2: 时间复杂度 O(n) 空间复杂度 O(1)
+
+```python
+# Python3
+class Solution:
+    def moveZeroes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        length = len(nums)
+        if nums is None or length <= 1:
+            return
+        i = 0
+        for j in range(length):
+            if nums[j] != 0:
+                if j != 0:
+                    nums[i], nums[j] = nums[j], nums[i]
+                i += 1
+
+```
+
 ## 344. Reverse String
 
 ```python
