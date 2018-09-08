@@ -273,6 +273,85 @@ def __partition(arr, l, r):
 
 ```
 
+3. 优化版2
+
+针对数组中存在大量相同元素的情况. 因为这种情况也有可能使快速排序退回为O(n^2). 具体请看下面对`__partition`的改进.
+
+```python
+@time_consuming_deco
+def quick_sort(arr):
+    __quick_sort(arr, 0, len(arr)-1)
+
+def __quick_sort(arr, l, r):
+    if r - l <= 15:  # 针对小数组使用插入排序的优化
+        insertion_sort_by_range(arr, l, r)
+        return
+    p = __partition(arr, l, r)
+    __quick_sort(arr, l, p-1)
+    __quick_sort(arr, p+1, r)
+
+def __partition(arr, l, r):
+    t = random.randint(l, r)
+    arr[l], arr[t] = arr[t], arr[l]
+    v = arr[l]
+    # arr[l+1, i) <= v, arr(j, r] >= v
+    i, j = l+1, r
+    while True:
+        while i <= r and arr[i] < v:
+            i += 1
+        while j >= l+1 and arr[j] > v:
+            j -= 1
+        if i > j:
+            break
+        arr[i], arr[j] = arr[j], arr[i]
+        i += 1
+        j -= 1
+    arr[l], arr[j] = arr[j], arr[l]
+    return j
+
+```
+
+4. 优化版3: 三路快排
+
+基本思想: 上面的算法在进行`__partition`的时候都是将数组分为两部分. 三路快排是将数组分成三部分: 小于`v`, 等于`v`, 大于`v`. 然后递归的时候就可以不管等于`v`的部分了.
+
+```python
+@time_consuming_deco
+def quick_sort_three_ways(arr):
+    __quick_sort_three_ways(arr, 0, len(arr)-1)
+
+def __quick_sort_three_ways(arr, l, r):
+    if r - l <= 15:
+        insertion_sort_by_range(arr, l, r)
+        return
+    t = random.randint(l, r)
+    arr[l], arr[t] = arr[t], arr[l]
+    v = arr[l]
+    lt = l
+    gt = r+1
+    i = l+1
+    while i < gt:
+        if arr[i] < v:
+            lt += 1
+            arr[lt], arr[i] = arr[i], arr[lt]
+            i += 1
+        elif arr[i] > v:
+            gt -= 1
+            arr[gt], arr[i] = arr[i], arr[gt]
+        else:
+            i += 1
+    arr[l], arr[lt] = arr[lt], arr[l]
+    __quick_sort_three_ways(arr, l, lt-1)
+    __quick_sort_three_ways(arr, gt, r)
+
+```
+
+### 归并排序和快速排序的衍生问题
+
+#### 逆序对(归并衍生)
+
+#### 取数组中的第n大元素(快排衍生)
+
 ## 查找算法
 
 ### 二分查找
