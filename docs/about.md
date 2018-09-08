@@ -16,6 +16,8 @@
 目前主要在学习**Python3**、**Django**、**Vue.js**、**JavaScript**、**Java**、**数据结构与算法**。
 :::
 
+[LeetCode](https://leetcode.com/ronaldzhao/)
+
 ## 编程信仰
 
 ::: tip

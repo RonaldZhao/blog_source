@@ -67,7 +67,7 @@ module.exports = {
           '/guide/': [
             '',
             // 'aliyunos-install-nginx',
-            'kxsw',
+            //'kxsw',
           ],
           '/notes/': [
             '',

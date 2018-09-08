@@ -251,6 +251,28 @@ def __partition(arr, l, r):
 
 ```
 
+2. 优化版1
+
+下面是针对近乎有序数组情况的优化, 因为当数组为有序的时候, 上面的快速排序算法的时间复杂度将退化为O(n^2).
+
+优化后的时间复杂度的**数学期望**是`O(nlogn)`.
+
+```python{3,4}
+# 只需要在下面的函数中添加两行
+def __partition(arr, l, r):
+    t = random.randint(l, r)
+    arr[t], arr[l] = arr[l], arr[t]
+    v = arr[l]
+    j = l
+    for i in range(j+1, r+1):
+        if arr[i] < v:
+            j += 1
+            arr[j], arr[i] = arr[i], arr[j]
+    arr[j], arr[l] = arr[l], arr[j]
+    return j
+
+```
+
 ## 查找算法
 
 ### 二分查找
