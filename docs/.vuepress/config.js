@@ -51,6 +51,9 @@ module.exports = {
             'medium',
             'hard',
           ],
+          '/newcoder/': [
+              '',
+          ],
           '/codewars/': [
             '',
           ],
@@ -110,6 +113,7 @@ module.exports = {
               items: [
                 {text: 'LintCode', link: '/lintcode/level-0'},
                 {text: 'LeetCode', link: '/leetcode/easy'},
+                {text: 'NerCoder', link: '/newcoder/'},
                 {text: 'CodeWars', link: '/codewars/'},
               ]
             },
