@@ -379,3 +379,69 @@ def binary_search(arr, target):
     return -1
 
 ```
+
+## 最大堆
+
+最大堆要满足两个条件:
+
+1. 任何一个结点的值都不大于其父结点的值;
+2. 所构成的二叉树是一棵完全二叉树.
+
+```python
+# 最大堆
+class MaxHeap(object):
+    def __init__(self, capacity):
+        """
+        capacity: 初始化容量
+        """
+        self.__data = [None]  # 第一个元素不使用
+        self.__capacity = capacity + 1
+        self.__size = 0
+
+    def size(self):
+        return self.__size
+
+    def is_empty(self):
+        return self.size() == 0
+
+    def insert(self, x):
+        """入队"""
+        assert self.size() + 1 <= self.__capacity
+        self.__data.append(x)
+        self.__size += 1
+        self.__shift_up()
+
+    def __shift_up(self):
+        i = self.size()
+        while i > 1:
+            if self.__data[i] <= self.__data[i//2]:
+                break
+            self.__data[i], self.__data[i//2] = self.__data[i//2], self.__data[i]
+            i //= 2
+
+    def extract(self):
+        """出队"""
+        if self.is_empty():
+            return None
+        data = self.__data[1]
+        self.__data[1] = self.__data[self.size()]
+        self.__size -= 1
+        self.__shift_down()
+        return data
+
+    def __shift_down(self):
+        if self.size() <= 1:
+            return
+        index = 1
+        while index*2 <= self.size():
+            t = index * 2
+            if t+1 <= self.size() and self.__data[t] < self.__data[t+1]:
+                    t += 1
+            if self.__data[index] >= self.__data[t]:
+                break
+            self.__data[index], self.__data[t] = self.__data[t], self.__data[index]
+            index = t
+
+```
+
+> TODO: 堆排序
