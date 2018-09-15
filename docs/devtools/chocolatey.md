@@ -114,4 +114,22 @@ PS C:\Windows\system32> vim --version
 PS C:\Windows\system32>
 ```
 
+## 安装`vimrc`
+
+[vimrc](https://github.com/amix/vimrc)
+
+1. 管理员权限打开`PowerShell`;
+
+2. 执行`cd ~`
+
+3. 执行`mkdir .vim_runtime`
+
+4. 执行`git clone --depth=1 https://github.com/amix/vimrc.git .\.vim_runtime\`
+
+5. 打开`Git`目录下的`git-bash.exe`
+
+6. 执行`cd ~/.vim_runtime/`
+
+7. 执行`sh install_awesome_vimrc.sh`
+
 **Done!, Have fun.**
