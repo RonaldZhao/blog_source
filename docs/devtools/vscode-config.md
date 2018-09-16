@@ -34,6 +34,5 @@
     "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "workbench.iconTheme": "vscode-icons",
     "workbench.colorTheme": "One Dark Pro",
-    "files.insertFinalNewline": true,
 }
 ```

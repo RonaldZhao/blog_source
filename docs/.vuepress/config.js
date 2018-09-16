@@ -78,6 +78,7 @@ module.exports = {
           ],
           '/devtools/': [
             '',
+            'python-vscode',
             // 'chocolatey',
             'powershell',
             'atom-flight-manual',
