@@ -74,7 +74,7 @@ module.exports = {
           ],
           '/notes/': [
             '',
-            // 'lastUpdated',
+            'lastUpdated',
           ],
           '/devtools/': [
             '',
