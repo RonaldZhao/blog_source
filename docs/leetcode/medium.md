@@ -1,5 +1,32 @@
 # Medium
 
+## 3. Longest Substring Without Repeating Characters
+
+```python3
+class Solution:
+    def lengthOfLongestSubstring(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        max_length = 0  # 记录子串的最大长度
+        begin = 0  # 记录当前子串的开始位置
+        showed_chars = {}  # 记录每个字符上一次出现时的位置
+        
+        for i in range(len(s)):  # 遍历整个字符串
+            char_i = s[i]  # 获取当前位置的字符
+            
+            if char_i in showed_chars and showed_chars[char_i] >= begin:  # 如果当前字符出现过并且上一次出现的位置在当前子串开始的位置甚至更后面（即出现了重复字符）
+                begin = showed_chars[char_i] + 1  # 则当前子串结束，重新记录下一个子串的开始位置为当前字符上一次出现位置的后面位置
+            else:
+                max_length = max(max_length, i-begin+1)  # 否则更新最大长度为当前最大长度和当前子串长度的最大值
+            
+            showed_chars[char_i] = i  # 更新当前字符最后出现的位置
+        
+        return max_length
+
+```
+
 ## 54. Spiral Matrix
 
 ```python
