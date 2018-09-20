@@ -69,6 +69,67 @@ class Solution:
 
 ```
 
+## 75. Sort Colors
+
+给定一个有 n 个元素的数组，数组中元素的取值只有0,1,2三种可能。为这个数组排序。
+
+生成测试数据：
+
+```python
+import random
+n = 10000
+nums = [random.randint(0, 2) for i in range(n)]
+```
+
+```python
+"""
+# 方法一，直接调用sort方法，时间复杂度：O(nlogn)
+def sortColors(self, nums):
+    nums.sort()
+
+# 方法二，计数排序，时间复杂度：O(n)，空间复杂度：O(1)
+"""
+def sortColors(self, nums):
+    lst = list(set(nums))
+    lst.sort()  # 保证后面重新赋值的时候是有序的
+    count = {}
+
+    for n in lst:
+        count[n] = 0
+
+    for n in nums:
+        assert n in lst  # 容错
+        count[n] += 1
+
+    count
+    indx = 0
+
+    for k in lst:
+        for i in range(count[k]):
+            nums[indx] = k
+            indx += 1
+
+"""
+
+# 方法三，参考三路快排的思路，只对nums进行依次遍历即可
+def sortColors(self, nums):
+    zero = -1  # nums[0,qero] == 0
+    two = len(nums)  # nums[two,len(nums)-1] == 2
+    i = 0  # nums[zero+1,i] == 1
+    while i < two:
+        if nums[i] == 1:
+            i += 1
+        elif nums[i] == 0:
+            nums[zero+1], nums[i] = nums[i], nums[zero+1]
+            zero += 1
+            i += 1
+        else:  # nums[i] == 2
+            assert nums[i] == 2
+            nums[i], nums[two-1] = nums[two-1], nums[i]
+            two -= 1
+
+```
+
 ## 209. Minimum Size Subarray Sum
 
 ```python
