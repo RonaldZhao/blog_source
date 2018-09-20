@@ -241,12 +241,12 @@ def __partition(arr, l, r):
     返回p, 使得arr[l, p-1] < arr[p] and arr[p+1, r] > arr[p]
     """
     v = arr[l]
-    j = l  # 注意这个初始值
+    j = l  # 注意这个初始值，它指向小于基准元素v的那一部分的最后一个元素
     for i in range(l+1, r+1):
         if arr[i] < v:
-            j += 1
+            j += 1  # 指向大于v的那一部分的第一个
             arr[j], arr[i] = arr[i], arr[j]
-    arr[j], arr[l] = arr[l], arr[j]
+    arr[j], arr[l] = arr[l], arr[j]  # 将基准元素和小于v的那一部分的最后一个交换位置
     return j
 
 ```
