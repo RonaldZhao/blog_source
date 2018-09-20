@@ -155,6 +155,39 @@ class Solution:
 
 ```
 
+## 88. Merge Sorted Array
+
+```python
+class Solution:
+    def merge(self, nums1, m, nums2, n):
+        """
+        :type nums1: List[int]
+        :type m: int
+        :type nums2: List[int]
+        :type n: int
+        :rtype: void Do not return anything, modify nums1 in-place instead.
+        """
+        nums1[m:m+n] = nums2[:]
+        self.__merge(nums1, 0, m-1, m+n-1)  # 这里要注意第三个参数不能使用(0+m+n-1)//2，因为第三个参数指的是左半部分最后一个值的索引，否则当两部分元素的个数不相等的时候就会出问题了
+    
+    def __merge(self, nums, l, m, r):
+        temp_arr = nums[l:r+1]
+        i, j, k = l, m+1, l
+        while i <= m and j <= r and k <= r:
+            if temp_arr[i-l] <= temp_arr[j-l]:
+                nums[k] = temp_arr[i-l]
+                i += 1
+            else:
+                nums[k] = temp_arr[j-l]
+                j += 1
+            k += 1
+        if i <= m:
+            nums[k:r+1] = temp_arr[i-l:m+1-l]
+        if j <= r:
+            nums[k:r+1] = temp_arr[j-l:r+1-l]
+
+```
+
 ## 118. Pascal's Triangle
 
 ```python
