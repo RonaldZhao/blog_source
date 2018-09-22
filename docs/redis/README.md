@@ -64,6 +64,10 @@ $ # 运行 redis 容器
 $ docker run --name myredis -d -p6379:6379 redis
 $ # 执行容器中的 redis-cli, 然后就可以直接使用命令操作 redis
 $ docker exec -it myredis redis-cli
+$ # 其他有用的命令
+$ docker ps -a  # 显示所有容器的状态
+$ docker stop myredis  # 停止 myredis 容器，会保存状态(比如设置了一个 set ronald 666，下次 get ronald 还会得到 666)
+$ docker start myredis  # 启动 myredis 容器，会保留之前的状态
 ```
 
 2. 直接安装
