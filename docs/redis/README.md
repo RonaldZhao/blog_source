@@ -68,6 +68,8 @@ $ # 其他有用的命令
 $ docker ps -a  # 显示所有容器的状态
 $ docker stop myredis  # 停止 myredis 容器，会保存状态(比如设置了一个 set ronald 666，下次 get ronald 还会得到 666)
 $ docker start myredis  # 启动 myredis 容器，会保留之前的状态
+$ docker exec -it myredis redis-server --version  # 查看 redis 的版本
+$ docker rm myredis  # 删除名为 myredis 的容器
 ```
 
 2. 直接安装
