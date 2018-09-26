@@ -78,6 +78,7 @@ module.exports = {
           ],
           '/devtools/': [
             '',
+            'sonarqube',
             'python-vscode',
             // 'chocolatey',
             'powershell',
