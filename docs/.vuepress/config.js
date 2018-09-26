@@ -28,6 +28,7 @@ module.exports = {
           '/python3/': [
             '',// 放最新文章, 其他同理
             //'python-decorator',
+            'functools-wraps',
             'generate-random-array',
             'python-electronjs',
             'blzyy',
