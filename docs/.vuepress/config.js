@@ -79,6 +79,7 @@ module.exports = {
           ],
           '/devtools/': [
             '',
+            'hyper',
             'sonarqube',
             'python-vscode',
             // 'chocolatey',
